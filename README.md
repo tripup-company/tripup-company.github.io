@@ -1,5 +1,3 @@
----
-layout: default
 title: "TripUp Developer Documentation"
 ---
 
