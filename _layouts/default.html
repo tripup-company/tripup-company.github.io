@@ -1,18 +1,16 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <title>{{ page.title }} - {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
   </head>
   <body>
     {% include navigation.html %}    
-    <h1>{{ page.title }}</h1>
-    <section>
-      {{ content }}
-    </section>
+    {{ content}}
     <footer>
-      &copy; to me
+      &copy; TripUp GmbH
     </footer>
   </body>
 </html>
