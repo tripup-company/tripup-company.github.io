@@ -32,7 +32,6 @@ Widget constructor get settings object that have next fields:
 | container | Id of div container (without #)  | widget_dwq2112
 | domain |  Host name |https://dev.meine-landausfluege.de
 | MAX_PRODUCT_SIZE | Products list size | 10
-
 For example:
 ```
 TripUp.Widget({
