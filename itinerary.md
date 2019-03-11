@@ -26,13 +26,6 @@ TripUp.Settings.CUSTOMER_ID = "your customer id";
 ```
 Widget constructor get settings object that have next fields:
 
-| Name|  Description | Example
-|--|--|--|
-| params | Search params | ```{ ship:'AIDAaura', date:'2018-09-08', duration: 9} or {id: 27} or {name: 'Mallorca'}```
-| container | Id of div container (without #)  | widget_dwq2112
-| domain |  Host name |https://dev.meine-landausfluege.de
-| MAX_PRODUCT_SIZE | Products list size | 10
-For example:
 ```
 TripUp.Widget({
     params: { ship:'AIDAaura', date:'2018-09-08', duration: 9},
@@ -41,6 +34,7 @@ TripUp.Widget({
     MAX_PRODUCT_SIZE:3
 });
 ```
+
 ### Triggered events
 
 Widget triggers **TripUpLoadDataFinish** event object when data load request is finished. This event is instance of javascript CustomEvent.
