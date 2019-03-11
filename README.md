@@ -1,5 +1,7 @@
 # Welcome to TripUp Developer Documentation
 
+{% include navigation.html %}
+
 ## TripUp JavaScrip Search widget
 
 This widget is a client that uses Cruise and Booking APIs. It have two part: 
