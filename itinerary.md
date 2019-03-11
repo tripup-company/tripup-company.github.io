@@ -1,5 +1,5 @@
-
-## TripUp JavaScrip Search widget
+# TripUp JavaScrip Search widget
+{% include navigation.html %}
 
 This widget is a client that uses Cruise and Booking APIs. It have two part: 
 - native javascript widget to search products by search parameters;
