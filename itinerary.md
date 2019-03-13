@@ -10,14 +10,14 @@ This widget is a frontend client that uses Cruise and Booking APIs.
 
 ```html
  <script type="text/javascript">
-        var tripUpWidgetId = "tripUpWidget",
-            tripUpWidgetParameter = "customer_id=TEST-123&ship=AIDAprima&date=2019-03-05&duration=7&port_id=26&port_date=2019-03-10&sku=MCT-001-00-DE",
-            tripUpWidgetSrc = "https://widget.meine-landausfluege.de/itinerary/iframe-src.html?"+tripUpWidgetParameter;
-        function tuWidgetReceiveMessage(e) {
-            var t = e.data.split(':'), i = t[0];
-            -1 !== [tripUpWidgetSrc].indexOf(e.origin) && 'widgetResize' === i && (iframe = document.getElementById(tripUpWidgetId)) && (iframe.contentWindow || iframe.documentWindow) == e.source && (iframe.style.height = t[1] + 'px')
-        }
-        window.addEventListener ? window.addEventListener('message', tuWidgetReceiveMessage, !1) : window.attachEvent && window.attachEvent('onmessage', tuWidgetReceiveMessage), document.write("<iframe id='" + tripUpWidgetId + "' src='" + tripUpWidgetSrc + "' style='width: 100%; height: 100%; border: 0;' frameborder='0'></iframe>");
+   var tripUpWidgetId = "tripUpWidget",
+       tripUpWidgetParameter = "customer_id=TEST-123&ship=AIDAprima&date=2019-03-05&duration=7&port_id=26&port_date=2019-03-10&sku=MCT-001-00-DE",
+       tripUpWidgetSrc = "https://widget.meine-landausfluege.de/itinerary/iframe-src.html?"+tripUpWidgetParameter;
+   function tuWidgetReceiveMessage(e) {
+       var t = e.data.split(':'), i = t[0];
+       -1 !== [tripUpWidgetSrc].indexOf(e.origin) && 'widgetResize' === i && (iframe = document.getElementById(tripUpWidgetId)) && (iframe.contentWindow || iframe.documentWindow) == e.source && (iframe.style.height = t[1] + 'px')
+   }
+   window.addEventListener ? window.addEventListener('message', tuWidgetReceiveMessage, !1) : window.attachEvent && window.attachEvent('onmessage', tuWidgetReceiveMessage), document.write("<iframe id='" + tripUpWidgetId + "' src='" + tripUpWidgetSrc + "' style='width: 100%; height: 100%; border: 0;' frameborder='0'></iframe>");
  </script>
 ```
 
@@ -56,58 +56,58 @@ Installation:
 <script src="https://widget.meine-landausfluege.de/itinerary/js/main.min.js" id="tripup-main"></script>
 ```
 - The initial part of widget script should be added to the head part of document or before the end of body tag:
-```js
-            TripUpMain.Init({
-                KEY: '<API Token>',
-                CUSTOMER_ID: "<customer id>",
-                toggleComponents: true,
-                // Contain all comonents and its default init parameters
-                components: {
-                    search: {
-                        //selector for search form conteiner
-                        container: '#tripup-search'
-                    },
-                    itinerary: {
-                        // Default init parameters
-                        params: {
-                            date: "2019-04-06",
-                            duration: 7,
-                            ship: "Azamara Pursuit"
-                        },
-                        // Allow rewrite default params from url
-                        passUrlParams: true,      
-                        // Selector for itinerary list                                          
-                        container: '#itinerary-holder'
-                    },
-                    products: {
-                         // Default init parameters
-                        params: {id: 64, date: '2019-02-13'},
-                          // Allow rewrite default params from url
-                        passUrlParams: true,
-                         // Selector for products list   
-                        container: '#products-holder',
-                        // Allowed callbacks
-                        moreClick: function (data) {
-                             alert("moreClick");
-                             return false;
-                        },
-                        chooseClick: function (data) {
-                            alert("chooseClick");
-                            return false;
-                        }
-                    }
-                },
-                // Define the components initial state                
-                state: {
-                     itinerary: {
-                         port: 1,
-                         date: '2019-04-12'
-                     },
-                     products: {
-                         product: "PMI-011-00-DE"
-                     }
-                }
-            }, true, '<some domain>');
+```javascript
+  TripUpMain.Init({
+      KEY: '<API Token>',
+      CUSTOMER_ID: "<customer id>",
+      toggleComponents: true,
+      // Contain all comonents and its default init parameters
+      components: {
+          search: {
+              //selector for search form conteiner
+              container: '#tripup-search'
+          },
+          itinerary: {
+              // Default init parameters
+              params: {
+                  date: "2019-04-06",
+                  duration: 7,
+                  ship: "Azamara Pursuit"
+              },
+              // Allow rewrite default params from url
+              passUrlParams: true,      
+              // Selector for itinerary list                                          
+              container: '#itinerary-holder'
+          },
+          products: {
+               // Default init parameters
+              params: {id: 64, date: '2019-02-13'},
+                // Allow rewrite default params from url
+              passUrlParams: true,
+               // Selector for products list   
+              container: '#products-holder',
+              // Allowed callbacks
+              moreClick: function (data) {
+                   alert("moreClick");
+                   return false;
+              },
+              chooseClick: function (data) {
+                  alert("chooseClick");
+                  return false;
+              }
+          }
+      },
+      // Define the components initial state                
+      state: {
+           itinerary: {
+               port: 1,
+               date: '2019-04-12'
+           },
+           products: {
+               product: "PMI-011-00-DE"
+           }
+      }
+  }, true, '<some domain>');
 ```
 - The widget container inside the body tag of document must be added:
 ```html
