@@ -14,24 +14,24 @@ We have 4 types of intergation for our partners.
 There are 2 types of affiliate link.
 - A partner link can be used by travel agent to make a booking. It looks as following:
   
-  For UK Shop "https&#58;//my-cruise-excursion.co.uk?partner=YourPartnerID"
+  For UK Shop "https://<i></i>my-cruise-excursion.co.uk?partner=YourPartnerID"
   
-  For US Shop "https&#58;//my-cruise-excursion.com?partner=YourPartnerID"
+  For US Shop "https://<i></i>my-cruise-excursion.com?partner=YourPartnerID"
   
-  For German Shop 'https&#58;//meine-landausfluege.de?partner=YourPartnerID'
+  For German Shop 'https://<i></i>meine-landausfluege.de?partner=YourPartnerID'
   
-  For Swiss Shop 'https&#58;//meine-landausfluege.ch?partner=YourPartnerID'
+  For Swiss Shop 'https://<i></i>meine-landausfluege.ch?partner=YourPartnerID'
 
 - A customer link can be sent to customer, so we can allocate the commission to a
 partner at the booking time. It looks as following: 
    
-   For UK Shop 'https&#58;//my-cruise-excursion.co.uk?customer=YourPartnerID'
+   For UK Shop 'https://<i></i>my-cruise-excursion.co.uk?customer=YourPartnerID'
    
-   For US Shop 'https&#58;//my-cruise-excursion.com?customer=YourPartnerID'
+   For US Shop 'https://<i></i>my-cruise-excursion.com?customer=YourPartnerID'
    
-   For German Shop 'https&#58;//meine-landausfluege.de?customer=YourPartnerID'
+   For German Shop 'https://<i></i>meine-landausfluege.de?customer=YourPartnerID'
    
-   For Swiss Shop 'https&#58;//meine-landausfluege.ch?customer=YourPartnerID'
+   For Swiss Shop 'https://<i></i>meine-landausfluege.ch?customer=YourPartnerID'
 
 ## Simple Widget
 The simple widget allow you to show some sub set of product on a cruise route or in a port.
