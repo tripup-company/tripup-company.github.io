@@ -1,127 +1,175 @@
-# TripUp JavaScrip Search widget
-{% include navigation.html %}
+# TripUp Itinerary Widget
 
-This widget is a client that uses Cruise and Booking APIs. It have two part: 
-- native javascript widget to search products by search parameters;
-- search form based on jQuery. 
+This widget is a frontend client that uses Cruise and Booking APIs. 
 
-## Development guide
+## Getting Started
 
-### Local development
-To use the project locally, first install dependencies via: 
-```shell
-npm install 
-```
-After this we can change styles and javascript sourses in **src** directory. Then we have to make dist version via:
-```shell
-gulp
-```
+### Iframe
 
-## Widget
-### Input parameters
-First, we have to set global params:
-```
-TripUp.Settings.KEY = "your access key";
-TripUp.Settings.CUSTOMER_ID = "your customer id";
-```
-Widget constructor get settings object that have next fields:
+- The simplst and most secure way to use this widget is to paste the following code into your html. It works well with every site, even with CMS systems:
 
-```
-TripUp.Widget({
-    params: { ship:'AIDAaura', date:'2018-09-08', duration: 9},
-    container:'widget_dwq2112',
-    domain: 'https://dev.meine-landausfluege.de',
-    MAX_PRODUCT_SIZE:3
-});
-```
-
-### Triggered events
-
-Widget triggers **TripUpLoadDataFinish** event object when data load request is finished. This event is instance of javascript CustomEvent.
-
-## Search form
-### Input parameters
-Search form is a jQuery plugin. To run it we have to set access key:
-```
-TripUp.Settings.KEY = "your access key";
-```
-Search form constructor get settings object that have next fields:
-
-| Name | Descripton  | Default value | 
-|--|--|--|
-|apiURL|Api Url| https://api.meine-landausfluege.de/cruise/v1/|
-|companySelector| Selector to find company select  field|[role="company-list"]|
-|shipSelector| Selector to find ship select field|[role="ship-list"]|
-|timeSelector|Selector to find company select field|[role="time-list"]|
-|portSelector|Selector to find port select field|[role="port-list"]|
-|cruiseFormSelector| Selector of search form by cruise params | [role="cruise-list-form"]|
-|portFormSelector|Selector of search form by port params|[role="port-list-form"]|
-|container| Selector to append form code if value not null| null|
-|loaderSelector|Selector to find loader element|.search-forms-loader |
-Simple example:
-```
-TripUp.Search({
-   container: '#widget_dwq2112'
-});
-```
-
-### Triggered events
-
-Search  form triggers several  native js events (CustomEvent instances): 
-
-|Event name|  Description | Event data |
-|--|--|--|
-|**TripUpUpdateByCruise** | Event triggers when cruise search form has been submitted |``` { ship:'Some ship', date:'20XX-XX-XX', duration: X}```|
-|**TripUpUpdateByPort**|Event triggers when port search form has been submitted|```{id: val, subid: subid}```|
-
-Also, search  form triggers several  jQuery custom events: 
-
-|Event name|  Description | Event data |
-|--|--|--|
-|**change-port.tripup** | Event triggers when port field has been changed |0 or portId|
-|**change-company.tripup**|Event triggers when company field has been changed|0 or companyId|
-|**change-ship.tripup**|Event triggers when ship field has been changed|0 or shipId|
-|**change-time.tripup**|Event triggers when time field has been changed|0 or timeId|
-
-### Search form degault values
-
-There is ability to set default values for parameters of the search form. Set value of initValues object  before search plugin is initialized. For example:
-```
-TripUp.Settings.Plugin = {
-        ...
-        initValues: {
-            companyID: 0,
-            shipID: 0,
-            cruiseID: 0,
-            portID: 0
+```html
+ <script type="text/javascript">
+        var tripUpWidgetId = "tripUpWidget",
+            tripUpWidgetParameter = "customer_id=TEST-123&ship=AIDAprima&date=2019-03-05&duration=7&port_id=26&port_date=2019-03-10&sku=MCT-001-00-DE",
+            tripUpWidgetSrc = "https://widget.meine-landausfluege.de/itinerary/iframe-src.html?"+tripUpWidgetParameter;
+        function tuWidgetReceiveMessage(e) {
+            var t = e.data.split(':'), i = t[0];
+            -1 !== [tripUpWidgetSrc].indexOf(e.origin) && 'widgetResize' === i && (iframe = document.getElementById(tripUpWidgetId)) && (iframe.contentWindow || iframe.documentWindow) == e.source && (iframe.style.height = t[1] + 'px')
         }
-        ...
-    };
+        window.addEventListener ? window.addEventListener('message', tuWidgetReceiveMessage, !1) : window.attachEvent && window.attachEvent('onmessage', tuWidgetReceiveMessage), document.write("<iframe id='" + tripUpWidgetId + "' src='" + tripUpWidgetSrc + "' style='width: 100%; height: 100%; border: 0;' frameborder='0'></iframe>");
+ </script>
 ```
-### Product Widget
 
-The constructor of this accepts the custom configuration object.
-```js
-TripUp.Products(
-    {
-       //Default search parameters
-       params: { 
-            //Port ID
-            id: 27, 
-            //Cruise date
-            date: '2019-05-13' 
-       },
-       //ID of html element where the component will be shown
-       container: 'products-holder',
-       // Show port information block. False by default.
-       showPort: false, 
-       // The more button callback. Null by default.
-       moreClick: function(data){
-           // TODO moreClick code
-       },
-       // The more button callback. Null by default.
-       chooseClick: function (data) {
-          // TODO: chooseClick code
-       }
-    })
+In tripUpWidgetParameter you can store the start parameter like the cruise, selected date, product etc. In the following table you can see the posible search parameter.
+You can set parameter by in this format parameter=value. Multiple parameters should be bind by ampersand.
+#### Iframe parameters
+
+The options in the following table as GET-parameters can be passed. This options define components initial state.
+
+| Name | Required | Description | Example value
+| --- | --- | --- | ---
+| ***customer_id*** | required | Your Partner-ID | TA-123
+| ***ship*** | optional | Cruise ship name | *Azamara Pursuit*
+| ***date*** | optional | Cruise date | *2019-04-06* Format: YYYY-MM-DD
+| ***port_id*** | optional | Itinerary item id | *1*
+| ***port_date*** | optional | Itinerary port date | *2019-04-12*
+| ***sku*** | optional | Selected product sku | *10*
+
+### Native Integration into HTML page (without iFrame)
+
+The iFrame technik doesn't allow you to change the style of widget. But you can do it, if you integrate the widget script native in your site. This is less secure, because of script conflicts and you should test it before publish it live. 
+
+Requirements:
+- The native integration requires jQuery Script: https://jquery.com/
+- You need an API Token so the widget is able to access our API. Please ask our it support for access.
+
+Installation:
+- If you need the loader icon component than you have to add the following stylesheet and JavaScript to the <head> part in HTML document:
+```html
+<link rel="stylesheet" type="text/css" href="https://widget.meine-landausfluege.de/itinerary/css/tripup-loader.min.css">
+<script src="https://widget.meine-landausfluege.de/itinerary/js/loader.min.js" id="tripup-loader">
 ```
+- Next the widget core js script must be added:
+```html
+<script src="https://widget.meine-landausfluege.de/itinerary/js/loader.min.js" id="tripup-loader"></script>
+<script src="https://widget.meine-landausfluege.de/itinerary/js/main.min.js" id="tripup-main"></script>
+```
+- The initial part of widget script should be added to the head part of document or before the end of body tag:
+```js
+            TripUpMain.Init({
+                KEY: '<API Token>',
+                CUSTOMER_ID: "<customer id>",
+                toggleComponents: true,
+                // Contain all comonents and its default init parameters
+                components: {
+                    search: {
+                        //selector for search form conteiner
+                        container: '#tripup-search'
+                    },
+                    itinerary: {
+                        // Default init parameters
+                        params: {
+                            date: "2019-04-06",
+                            duration: 7,
+                            ship: "Azamara Pursuit"
+                        },
+                        // Allow rewrite default params from url
+                        passUrlParams: true,      
+                        // Selector for itinerary list                                          
+                        container: '#itinerary-holder'
+                    },
+                    products: {
+                         // Default init parameters
+                        params: {id: 64, date: '2019-02-13'},
+                          // Allow rewrite default params from url
+                        passUrlParams: true,
+                         // Selector for products list   
+                        container: '#products-holder',
+                        // Allowed callbacks
+                        moreClick: function (data) {
+                             alert("moreClick");
+                             return false;
+                        },
+                        chooseClick: function (data) {
+                            alert("chooseClick");
+                            return false;
+                        }
+                    }
+                },
+                // Define the components initial state                
+                state: {
+                     itinerary: {
+                         port: 1,
+                         date: '2019-04-12'
+                     },
+                     products: {
+                         product: "PMI-011-00-DE"
+                     }
+                }
+            }, true, '<some domain>');
+```
+- The widget container inside the body tag of document must be added:
+```html
+<!--Start TripUp Widget Container-->
+    <div class="tripup-block">
+      <div id="tripup-search"></div>
+      <div class="tripup-loader"></div>
+      <div class="tripup-container">
+        <div class="l-row">
+          <div class="l-col-4" id="itinerary-holder"></div>
+          <div class="l-col-8 l-push-4" id="products-holder"></div>
+        </div>
+      </div>
+    </div>
+<!-- End TripUp Widget Container-->
+```
+
+## Search form component
+
+This component allow end user to select cruise or port .
+
+### Dispatched events
+
+| Constant name | Default value | Payload example | Comments |
+| --- | --- | --- | --- |
+| **CRUISE_SELECT_EVENT_NAME** | *'TripUpUpdateByCruise'* | `{ date: "2019-02-18", duration: 14, id: 10762, ship: "AIDAbella"}`| **id** - cruiseID |
+| **PORT_SELECT_EVENT_NAME** | *'TripUpUpdateByPort'* |```{id: 27,  subid: 42787 }``` | |
+
+## Itinerary component
+
+This component shows itinerary of selected cruise.
+
+### Listened events
+
+| Constant name | Default value | Payload example | Comments |
+| --- | --- | --- | --- |
+| **CRUISE_SELECT_EVENT_LISTENER** | *'TripUpUpdateByCruise'* | ```{ date: "2019-02-18", duration: 14, id: 10762, ship: "AIDAbella"}``` | **id** - cruise id  |
+| **SELECT_PORT_EVENT_LISTENER** | *'TripUpSelectItineraryPort'* | ```{port: <port_id or "first" or"last">, [date: <cruise date>]}``` | if **port** = first or last the date value will be ignored |
+
+### Dispatched events
+     
+| Constant name | Default value | Payload example | Comments |
+| --- | --- | --- | --- |
+| **ITINERARY_SELECT_EVENT_NAME** | *'TripUpSelectedItinerary'* | `{ship: "Azamara Pursuit", current: {…}, prev: null, next: {…}}` |  Current, prev, next are the itinerary objects |   
+| **LOADED_EVENT_NAME** | *'TripUpItineraryLoaded'* | `{ cruise:{date: "2019-04-06", duration: 7, port: "Lissabon", ship: "Azamara Pursuit""}, items: [ Iteinerary objects ]}}` |  |
+
+## Products component
+
+This component shows products for selected cruise or port
+
+### Listened events
+
+| Constant name | Default value | Payload example | Comments |
+| --- | --- | --- | --- |
+| **SCROLL_EVENT_LISTENER** | *'TripUpScrollProducts'* | `{product: <firs or last or sku>}` |  |
+| **PORT_SELECT_EVENT_LISTENER** | *'TripUpUpdateByPort'* |```{id: 27,  subid: 42787 }``` | |
+| **ITINERARY_SELECT_EVENT_LISTENER** | *'TripUpSelectedItinerary'* | `{ship: "Azamara Pursuit", current: {…}, prev: null, next: {…}}` |  Current, prev, next are the itinerary objects |
+
+### Dispatched events
+
+| Constant name | Default value | Payload example | Comments |
+| --- | --- | --- | --- |
+| **LOADED_EVENT_NAME** | *'TripUpProductsLoaded'* | `{[<product object>]}` |  |
+| **PRODUCT_SELECT_EVENT_NAME** | *'TripUpProductSelected'* | `{<product object>}` | |
+| **SELECT_PORT_EVENT_NAME** | *'TripUpSelectItineraryPort'* | `{port: <port_id or "first" or"last">, [date: <cruise date>]}` | if **port** = first or last the date value will be ignored |
