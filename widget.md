@@ -4,6 +4,11 @@ A widget displays our offers for a port or a route. The customer will be redirec
 It can be customized and personalized for customer by dynamically changing the route parameter. However, it is also possible to start with a port or a ship and display a search mask,
 through which the customers can navigate. 
 
+
+- Test Widget
+
+  https://widget.my-cruise-excursion.com/test.html
+
 Please use our code generator, to generate the widget code.
 - For UK Shop 
 
