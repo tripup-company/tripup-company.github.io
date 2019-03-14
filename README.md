@@ -4,11 +4,8 @@ This site discribs the possibility to integrate with our sites.
 
 my-cruise-excursion.com (co.uk) or meine-landausfluege.de (.ch)
 
-We have 4 types of intergation for our partners.
-1. Affiliate Link
-2. Simple Widget
-2. Itinerary Widget
-3. REST API
+We have got 4 intergation types for our partners, those are disribed bellow. 
+In the navigation menue above you can quick jump to the integration type you are interessted in.
 
 ## Affiliate links
 There are 2 types of affiliate link.
