@@ -6,7 +6,7 @@ This widget is a frontend client that uses Cruise and Booking APIs.
 
 ### Iframe
 
-- The simplst and most secure way to use this widget is to paste the following code into your html. It works well with every site, even with CMS systems:
+The simplst and most secure way to use this widget is to paste the following code into your html. It works well with every site, even with CMS systems:
 
 ```html
  <script type="text/javascript">
