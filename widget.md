@@ -1,4 +1,4 @@
-#Simple Widget
+# Simple Widget
 
 A widget displays our offers for a port or a route. The customer will be redirected to our site by clicking on an offer.
 It can be customized and personalized for customer by dynamically changing the route parameter. However, it is also possible to start with a port or a ship and display a search mask,
