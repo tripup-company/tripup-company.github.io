@@ -26,9 +26,13 @@
 
         <a href="{{ site.github.repository_url }}" class="button fork"><strong>View On GitHub</strong></a>
       </div><!-- end banner -->
-
+      <div class="container">
+        {% include navigation.html %}
+      </div>
     <div class="wrapper">
-      {% include navigation.html %}
+      <nav>
+        <ul></ul>
+      </nav>
       <section>
         {{ content }}
 
