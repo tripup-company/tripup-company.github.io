@@ -7,13 +7,17 @@ through which the customers can navigate.
 Please use our code generator, to generate the widget code.
 - For UK Shop 
 
-  https://widget.my-cruiseexcursion.co.uk/generator.html
+  https://widget.my-cruise-excursion.co.uk/generator.html
+  
 - For US Shop 
 
-  https://widget.my-cruiseexcursion.coom/generator.html
+  https://widget.my-cruise-excursion.coom/generator.html
+  
 - For German Shop 
 
   https://widget.meine-landausfluege.de/generator.html
+  
 - For Switss Shop 
 
   https://widget.meine-landausfluege.ch/generator.html
+  
