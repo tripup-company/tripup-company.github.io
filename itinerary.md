@@ -17,7 +17,7 @@ You only need to past this code in your page and change initial parameter.
 ```html
  <script type="text/javascript">
    var tripUpWidgetId = "tripUpWidget",
-       tripUpWidgetParameter = "[b]customer_id=TEST-123&ship=AIDAprima&date=2019-03-05&duration=7&port_id=26&port_date=2019-03-10&sku=MCT-001-00-DE[/b]",
+       tripUpWidgetParameter = "customer=TEST-123&ship=AIDAprima&date=2019-03-05&duration=7&port_id=26&port_date=2019-03-10&sku=MCT-001-00-DE",
        tripUpWidgetSrc = "https://widget.meine-landausfluege.de/itinerary/iframe-src.html?"+tripUpWidgetParameter;
    function tuWidgetReceiveMessage(e) {
        var t = e.data.split(':'), i = t[0];
@@ -33,14 +33,26 @@ You can set parameter by in this format parameter=value. Multiple parameters sho
 
 The options in the following table as GET-parameters can be passed. This options define components initial state.
 
+key	Custopmer key	--
+customer	Custopmer ID	TA-80
+coupon	Custopmer coupon	coupon number
+channel	Custopmer channel	Some additional information
+ship	Cruise ship name	Azamara Pursuit
+date	Cruise date	2019-04-06
+port_id	Itinerary item id	1
+port_date	Itinerary port date	2019-04-12
+sku	Selected product sku	10
+
 | Name | Required | Description | Example value
 | --- | --- | --- | ---
-| ***customer_id*** | required | Your Partner-ID | TA-123
+| ***customer*** | required | Your Partner-ID | TA123
 | ***ship*** | optional | Cruise ship name | *Azamara Pursuit*
 | ***date*** | optional | Cruise date | *2019-04-06* Format: YYYY-MM-DD
 | ***port_id*** | optional | Itinerary item id | *1*
 | ***port_date*** | optional | Itinerary port date | *2019-04-12*
 | ***sku*** | optional | Selected product sku | *10*
+| ***coupon*** | optional | You can set a coupon code to make some sale | TA-123-10p-ASDF
+| ***channel*** | optional | You can use this field to send some additional information, that will be shown in your reports | My-Custom-Channel
 
 ### Native Integration into HTML page (without iFrame)
 
