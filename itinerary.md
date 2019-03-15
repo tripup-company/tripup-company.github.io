@@ -10,6 +10,10 @@ The simplst and most secure way to use this widget is to paste the following cod
 ### Iframe
 You only need to past this code in your page and change initial parameter.
 
+{{ "{% highlight javascript " }}%}
+/* Some pointless Javascript */ var rawr = ["r", "a", "w", "r"]; 
+{{ "{% endhighlight " }}%}
+
 ```html
  <script type="text/javascript">
    var tripUpWidgetId = "tripUpWidget",
