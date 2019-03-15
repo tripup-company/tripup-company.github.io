@@ -60,7 +60,9 @@ Installation:
 <script src="https://widget.meine-landausfluege.de/itinerary/js/main.min.js" id="tripup-main"></script>
 ```
 - The initial part of widget script should be added to the head part of document or before the end of body tag:
-```javascript
+ 
+```html
+ <script type="text/javascript">
   TripUpMain.Init({
       KEY: '<API Token>',
       CUSTOMER_ID: "<customer id>",
@@ -112,8 +114,11 @@ Installation:
            }
       }
   }, true, '<some domain>');
+ </script>
 ```
+
 - The widget container inside the body tag of document must be added:
+
 ```html
 <!--Start TripUp Widget Container-->
     <div class="tripup-block">
