@@ -40,7 +40,7 @@ The options in the following table as GET-parameters can be passed. This options
 | ***coupon*** | optional | You can set a coupon code to make some sale | TA-123-10p-ASDF
 | ***channel*** | optional | You can use this field to send some additional information, that will be shown in your reports | My-Custom-Channel
 
-### Native Integration into HTML page (without iFrame)
+## Native Integration into HTML page (without iFrame)
 
 The iFrame technik doesn't allow you to change the style of widget. But you can do it, if you integrate the widget script native in your site. This is less secure, because of script conflicts and you should test it before publish it live. 
 You should also choose this integration type if you want to use components separated from each other or define different containers for them.
@@ -139,51 +139,56 @@ The widget container inside the body tag of document must be added:
 <!-- End TripUp Widget Container-->
 ```
 
-## Search form component
+## Component and events
+
+Component are independent from each other. They communicate over event with each other.
+Below you will finde the event, those will be sent and recieved by component.
+
+### Search form component
 
 This component allow end user to select cruise or port .
 
-### Dispatched events
+#### Dispatched events
 
 | Constant name | Default value | Payload example | Comments |
 | --- | --- | --- | --- |
-| **CRUISE_SELECT_EVENT_NAME** | *'TripUpUpdateByCruise'* | `{ date: "2019-02-18", duration: 14, id: 10762, ship: "AIDAbella"}`| **id** - cruiseID |
+| **CRUISE_SELECT_EVENT_NAME** | *'TripUpUpdateByCruise'* | `{ date: "2019-02-18", duration: 14, id: 10762, ship: "AIDAbella"}`| **id** => internal cruiseID |
 | **PORT_SELECT_EVENT_NAME** | *'TripUpUpdateByPort'* |```{id: 27,  subid: 42787 }``` | |
 
-## Itinerary component
+### Itinerary component
 
 This component shows itinerary of selected cruise.
 
-### Listened events
+#### Listened events
 
 | Constant name | Default value | Payload example | Comments |
 | --- | --- | --- | --- |
-| **CRUISE_SELECT_EVENT_LISTENER** | *'TripUpUpdateByCruise'* | ```{ date: "2019-02-18", duration: 14, id: 10762, ship: "AIDAbella"}``` | **id** - cruise id  |
-| **SELECT_PORT_EVENT_LISTENER** | *'TripUpSelectItineraryPort'* | ```{port: <port_id or "first" or"last">, [date: <cruise date>]}``` | if **port** = first or last the date value will be ignored |
+| **CRUISE_SELECT_EVENT_LISTENER** | *'TripUpUpdateByCruise'* | ```{ date: "2019-02-18", duration: 14, id: 10762, ship: "AIDAbella"}``` | **id** => internal cruiseID  |
+| **SELECT_PORT_EVENT_LISTENER** | *'TripUpSelectItineraryPort'* | ```{port: <port_id or "first" or "last">, [date: <cruise date>]}``` | if **port** = first or last than date will be ignored |
 
-### Dispatched events
+#### Dispatched events
      
 | Constant name | Default value | Payload example | Comments |
 | --- | --- | --- | --- |
 | **ITINERARY_SELECT_EVENT_NAME** | *'TripUpSelectedItinerary'* | `{ship: "Azamara Pursuit", current: {…}, prev: null, next: {…}}` |  Current, prev, next are the itinerary objects |   
-| **LOADED_EVENT_NAME** | *'TripUpItineraryLoaded'* | `{ cruise:{date: "2019-04-06", duration: 7, port: "Lissabon", ship: "Azamara Pursuit""}, items: [ Iteinerary objects ]}}` |  |
+| **LOADED_EVENT_NAME** | *'TripUpItineraryLoaded'* | `{ cruise: { date: "2019-04-06", duration: 7, port: "Lissabon", ship: "Azamara Pursuit""}, items: [ Iteinerary objects ]}}` |  |
 
-## Products component
+### Products component
 
 This component shows products for selected cruise or port
 
-### Listened events
+#### Listened events
 
 | Constant name | Default value | Payload example | Comments |
 | --- | --- | --- | --- |
-| **SCROLL_EVENT_LISTENER** | *'TripUpScrollProducts'* | `{product: <firs or last or sku>}` |  |
+| **SCROLL_EVENT_LISTENER** | *'TripUpScrollProducts'* | ```{product: <firs or last or sku>}``` |  |
 | **PORT_SELECT_EVENT_LISTENER** | *'TripUpUpdateByPort'* |```{id: 27,  subid: 42787 }``` | |
 | **ITINERARY_SELECT_EVENT_LISTENER** | *'TripUpSelectedItinerary'* | `{ship: "Azamara Pursuit", current: {…}, prev: null, next: {…}}` |  Current, prev, next are the itinerary objects |
 
-### Dispatched events
+#### Dispatched events
 
 | Constant name | Default value | Payload example | Comments |
 | --- | --- | --- | --- |
 | **LOADED_EVENT_NAME** | *'TripUpProductsLoaded'* | `{[<product object>]}` |  |
 | **PRODUCT_SELECT_EVENT_NAME** | *'TripUpProductSelected'* | `{<product object>}` | |
-| **SELECT_PORT_EVENT_NAME** | *'TripUpSelectItineraryPort'* | `{port: <port_id or "first" or"last">, [date: <cruise date>]}` | if **port** = first or last the date value will be ignored |
+| **SELECT_PORT_EVENT_NAME** | *'TripUpSelectItineraryPort'* | `{port: <port_id or "first" or"last">, [date: <cruise date>]}` | if **port** = first or last than date will be ignored  |
