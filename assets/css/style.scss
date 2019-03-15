@@ -17,3 +17,18 @@
     }
   }
 }
+#banner {
+    left: 0;
+    right: calc(50% - 600px);
+    margin-right: auto;
+}
+.wrapper {
+    width: 100%;
+    max-width: 879px;
+    margin-left: calc(50% - 340px);
+}
+@media print, screen and (max-width: 1060px){
+  .wrapper {
+    margin: 0 auto;
+  }
+}
