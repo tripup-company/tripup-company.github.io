@@ -29,16 +29,6 @@ You can set parameter by in this format parameter=value. Multiple parameters sho
 
 The options in the following table as GET-parameters can be passed. This options define components initial state.
 
-key	Custopmer key	--
-customer	Custopmer ID	TA-80
-coupon	Custopmer coupon	coupon number
-channel	Custopmer channel	Some additional information
-ship	Cruise ship name	Azamara Pursuit
-date	Cruise date	2019-04-06
-port_id	Itinerary item id	1
-port_date	Itinerary port date	2019-04-12
-sku	Selected product sku	10
-
 | Name | Required | Description | Example value
 | --- | --- | --- | ---
 | ***customer*** | required | Your Partner-ID | TA123
