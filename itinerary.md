@@ -49,23 +49,27 @@ Requirements:
 - You need an API Token so the widget is able to access our API. Please ask our it support for access.
 
 Installation:
-- If you need the loader icon component than you have to add the following stylesheet and JavaScript to the <head> part in HTML document:
+If you need the loader icon component than you have to add the following stylesheet and JavaScript to the <head> part in HTML document:
+
 ```html
 <link rel="stylesheet" type="text/css" href="https://widget.meine-landausfluege.de/itinerary/css/tripup-loader.min.css">
 <script src="https://widget.meine-landausfluege.de/itinerary/js/loader.min.js" id="tripup-loader">
 ```
-- Next the widget core js script must be added:
+
+Next the widget core js script must be added:
+
 ```html
 <script src="https://widget.meine-landausfluege.de/itinerary/js/loader.min.js" id="tripup-loader"></script>
 <script src="https://widget.meine-landausfluege.de/itinerary/js/main.min.js" id="tripup-main"></script>
 ```
-- The initial part of widget script should be added to the head part of document or before the end of body tag:
+
+The initial part of widget script should be added to the head part of document or before the end of body tag:
  
 ```html
  <script type="text/javascript">
   TripUpMain.Init({
       KEY: '<API Token>',
-      CUSTOMER_ID: "<customer id>",
+      CUSTOMER_ID: "<Your-Partner-Id>",
       toggleComponents: true,
       // Contain all comonents and its default init parameters
       components: {
