@@ -4,14 +4,16 @@ This widget is a frontend client that uses Cruise and Booking APIs.
 
 ## Getting Started
 
-### Iframe
+There 2 option how you can use widget: using it as iframe or bind it directly as script into your page. 
+The simplst and most secure way to use this widget is to paste the following code into your html. It works well with every site, even with CMS systems. If you use widget in a iframe you can not modify anything inside iframe. The last option is more advanced and needs more technical skills, but it's allow you to change style inside the widget.
 
-The simplst and most secure way to use this widget is to paste the following code into your html. It works well with every site, even with CMS systems:
+### Iframe
+You only need to past this code in your page and change initial parameter.
 
 ```html
  <script type="text/javascript">
    var tripUpWidgetId = "tripUpWidget",
-       tripUpWidgetParameter = "customer_id=TEST-123&ship=AIDAprima&date=2019-03-05&duration=7&port_id=26&port_date=2019-03-10&sku=MCT-001-00-DE",
+       tripUpWidgetParameter = "[b]customer_id=TEST-123&ship=AIDAprima&date=2019-03-05&duration=7&port_id=26&port_date=2019-03-10&sku=MCT-001-00-DE[/b]",
        tripUpWidgetSrc = "https://widget.meine-landausfluege.de/itinerary/iframe-src.html?"+tripUpWidgetParameter;
    function tuWidgetReceiveMessage(e) {
        var t = e.data.split(':'), i = t[0];
