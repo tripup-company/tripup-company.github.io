@@ -26,6 +26,9 @@
     width: 100%;
     max-width: 879px;
     margin-left: calc(50% - 340px);
+    section {
+      width: 100%;
+    }
 }
 @media print, screen and (max-width: 1060px){
   .wrapper {
