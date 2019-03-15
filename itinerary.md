@@ -152,8 +152,8 @@ This component allow end user to select cruise or port .
 
 | Constant name | Default value | Payload example | Comments |
 | --- | --- | --- | --- |
-| **CRUISE_SELECT_EVENT_NAME** | *'TripUpUpdateByCruise'* | `{ date: "2019-02-18", duration: 14, id: 10762, ship: "AIDAbella"}`| **id** => internal cruiseID |
-| **PORT_SELECT_EVENT_NAME** | *'TripUpUpdateByPort'* |```{id: 27,  subid: 42787 }``` | |
+| *CRUISE_SELECT_EVENT_NAME* | *'TripUpUpdateByCruise'* | `{ date: "2019-02-18", duration: 14, id: 10762, ship: "AIDAbella"}`| **id** => internal cruiseID |
+| *PORT_SELECT_EVENT_NAME* | *'TripUpUpdateByPort'* |```{id: 27,  subid: 42787 }``` | |
 
 ### Itinerary component
 
@@ -163,15 +163,15 @@ This component shows itinerary of selected cruise.
 
 | Constant name | Default value | Payload example | Comments |
 | --- | --- | --- | --- |
-| **CRUISE_SELECT_EVENT_LISTENER** | *'TripUpUpdateByCruise'* | ```{ date: "2019-02-18", duration: 14, id: 10762, ship: "AIDAbella"}``` | **id** => internal cruiseID  |
-| **SELECT_PORT_EVENT_LISTENER** | *'TripUpSelectItineraryPort'* | ```{port: <port_id or "first" or "last">, [date: <cruise date>]}``` | if **port** = first or last than date will be ignored |
+| *CRUISE_SELECT_EVENT_LISTENER* | *'TripUpUpdateByCruise'* | ```{ date: "2019-02-18", duration: 14, id: 10762, ship: "AIDAbella"}``` | **id** => internal cruiseID  |
+| *SELECT_PORT_EVENT_LISTENER* | *'TripUpSelectItineraryPort'* | ```{port: <port_id or "first" or "last">, [date: <cruise date>]}``` | if **port** = first or last than date will be ignored |
 
 #### Dispatched events
      
 | Constant name | Default value | Payload example | Comments |
 | --- | --- | --- | --- |
-| **ITINERARY_SELECT_EVENT_NAME** | *'TripUpSelectedItinerary'* | `{ship: "Azamara Pursuit", current: {…}, prev: null, next: {…}}` |  Current, prev, next are the itinerary objects |   
-| **LOADED_EVENT_NAME** | *'TripUpItineraryLoaded'* | `{ cruise: { date: "2019-04-06", duration: 7, port: "Lissabon", ship: "Azamara Pursuit""}, items: [ Iteinerary objects ]}}` |  |
+| *ITINERARY_SELECT_EVENT_NAME* | *'TripUpSelectedItinerary'* | `{ship: "Azamara Pursuit", current: {…}, prev: null, next: {…}}` |  Current, prev, next are the itinerary objects |   
+| *LOADED_EVENT_NAME* | *'TripUpItineraryLoaded'* | `{ cruise: { date: "2019-04-06", duration: 7, port: "Lissabon", ship: "Azamara Pursuit""}, items: [ Iteinerary objects ]}}` |  |
 
 ### Products component
 
@@ -181,14 +181,14 @@ This component shows products for selected cruise or port
 
 | Constant name | Default value | Payload example | Comments |
 | --- | --- | --- | --- |
-| **SCROLL_EVENT_LISTENER** | *'TripUpScrollProducts'* | ```{product: <firs or last or sku>}``` |  |
-| **PORT_SELECT_EVENT_LISTENER** | *'TripUpUpdateByPort'* |```{id: 27,  subid: 42787 }``` | |
-| **ITINERARY_SELECT_EVENT_LISTENER** | *'TripUpSelectedItinerary'* | `{ship: "Azamara Pursuit", current: {…}, prev: null, next: {…}}` |  Current, prev, next are the itinerary objects |
+| *SCROLL_EVENT_LISTENER* | *'TripUpScrollProducts'* | ```{product: <firs or last or sku>}``` |  |
+| *PORT_SELECT_EVENT_LISTENER* | *'TripUpUpdateByPort'* |```{id: 27,  subid: 42787 }``` | |
+| *ITINERARY_SELECT_EVENT_LISTENER* | *'TripUpSelectedItinerary'* | `{ship: "Azamara Pursuit", current: {…}, prev: null, next: {…}}` |  Current, prev, next are the itinerary objects |
 
 #### Dispatched events
 
 | Constant name | Default value | Payload example | Comments |
 | --- | --- | --- | --- |
-| **LOADED_EVENT_NAME** | *'TripUpProductsLoaded'* | `{[<product object>]}` |  |
-| **PRODUCT_SELECT_EVENT_NAME** | *'TripUpProductSelected'* | `{<product object>}` | |
-| **SELECT_PORT_EVENT_NAME** | *'TripUpSelectItineraryPort'* | `{port: <port_id or "first" or"last">, [date: <cruise date>]}` | if **port** = first or last than date will be ignored  |
+| *LOADED_EVENT_NAME* | *'TripUpProductsLoaded'* | `{[<product object>]}` |  |
+| *PRODUCT_SELECT_EVENT_NAME* | *'TripUpProductSelected'* | `{<product object>}` | |
+| *SELECT_PORT_EVENT_NAME* | *'TripUpSelectItineraryPort'* | `{port: <port_id or "first" or"last">, [date: <cruise date>]}` | if **port** = first or last than date will be ignored  |
