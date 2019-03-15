@@ -121,7 +121,7 @@ The initial part of widget script should be added to the head part of document o
  </script>
 ```
 
-- The widget container inside the body tag of document must be added:
+The widget container inside the body tag of document must be added:
 
 ```html
 <!--Start TripUp Widget Container-->
