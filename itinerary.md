@@ -43,6 +43,7 @@ The options in the following table as GET-parameters can be passed. This options
 ### Native Integration into HTML page (without iFrame)
 
 The iFrame technik doesn't allow you to change the style of widget. But you can do it, if you integrate the widget script native in your site. This is less secure, because of script conflicts and you should test it before publish it live. 
+You should also choose this integration type if you want to use components separated from each other or define different containers for them.
 
 Requirements:
 - The native integration requires jQuery Script: https://jquery.com/
