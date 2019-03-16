@@ -12,32 +12,31 @@ You only need to past this code in your page and change initial parameter.
 
 ```html
 <div id="tripup-widget-1" data-customer="TA123" data-port-id="90"></div>
-<script async defer type="text/javascript" data-containers="tripup-widget-2, tripup-widget-2" data-components="search, itinerary, products"
+<script async defer type="text/javascript" data-containers="tripup-widget-1, tripup-widget-2" data-components="search, itinerary, products"
         src="https://widget.my-cruise-excursion.com/itinerary/js/main.js"></script>
 ```
+
+#### iFrame parameters
+
 In data attributes of the script tag you should set initial parameters. See the following table.
 
 | Name | Required | Description | Example value
 | --- | --- | --- | ---
-| ***containers*** | required | one or more container id separated by comma | tripup-widget-2, tripup-widget-2
+| ***containers*** | required | One or more container id separated by comma. You can use more than one widget on your page. | tripup-widget-1, tripup-widget-2
 | ***components*** | optional | The widget contains 3 components. By default all 3 components will be loaded. You can define comma separed list of components you want to be shown  | search, itinerary, products
 
-
-In data attributes of your container you can store the start parameter like the cruise, selected date, product etc. In the following table you can see the posible search parameter.
-
-#### iFrame parameters
-
-The options in the following table as GET-parameters can be passed. This options define components initial state.
+In data attributes of your container you can store the start parameter. In the following table you can see the posible initial parameter.
 
 | Name | Required | Description | Example value
 | --- | --- | --- | ---
 | ***customer*** | required | Your Partner-ID | TA123
+| ***coupon*** | optional | You can set a coupon code to make some sale | TA123-10p-ASDF
+| ***channel*** | optional | You can use this field to send some additional information, that will be shown in your reports | My-Custom-Channel
+| The following parametes define the inital state for widget like the cruise, selected date, product etc.
 | ***ship*** | optional | Cruise ship name | *Azamara Pursuit*
 | ***date*** | optional | Cruise date | *2019-04-06* Format: YYYY-MM-DD
 | ***port_id*** | optional | Itinerary item id | *1*
 | ***port_date*** | optional | Itinerary port date | *2019-04-12* Format: YYYY-MM-DD
-| ***coupon*** | optional | You can set a coupon code to make some sale | TA123-10p-ASDF
-| ***channel*** | optional | You can use this field to send some additional information, that will be shown in your reports | My-Custom-Channel
 | ***product*** | optional | Selected product | *PMI-001-01-EN*
 
 #### iFrame domain
