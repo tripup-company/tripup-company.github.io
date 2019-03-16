@@ -45,6 +45,7 @@ In data attributes of your container you can store the start parameter. In the f
 | components | optional | The widget contains 3 components. By default all 3 components will be loaded. You can define comma separed list of components you want to be shown  | search, itinerary, products
 | ship | optional | Cruise ship name | *Azamara Pursuit*
 | date | optional | Cruise date | *2019-04-06* Format: YYYY-MM-DD
+| duration | optional | Cruise duration in days | 7
 | port_id | optional | Itinerary item id | *1*
 | port_date | optional | Itinerary port date | *2019-04-12* Format: YYYY-MM-DD
 | product | optional | Selected product | *PMI-001-01-EN*
