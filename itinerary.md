@@ -7,13 +7,25 @@ This widget is a frontend client that uses Cruise and Booking APIs.
 There 2 option how you can use widget: using it as iframe or bind it directly as script into your page. 
 The simplst and most secure way to use this widget is to paste the following code into your html. It works well with every site, even with CMS systems. If you use widget in a iframe you can not modify anything inside iframe. The last option is more advanced and needs more technical skills, but it's allow you to change style inside the widget.
 
+#### Domain
+
+We have several domains for different markts. By changing domain you can set from which shop the data should be loaded and which currency and language will be displayed.
+The have different shop listed in the following table.
+
+| widget src | shop | currency | language 
+| --- | --- | --- | ---
+| widget.my-cruise-excursion.com | my-cruise-excursion.com | USD | ENG
+| widget.my-cruise-excursion.co.uk | my-cruise-excursion.co.uk | GBP | ENG
+| widget.meine-landausfluege.de | meine-landausfluege.de | EUR | GER
+| widget.meine-landausfluege.ch | meine-landausfluege.ch | CHF | GER
+
 ### iFrame
 You only need to past this code in your page and change initial parameter.
 
 ```html
 <div id="tripup-widget-1" data-customer="TA123" data-port-id="90"></div>
 <script async defer type="text/javascript" data-containers="tripup-widget-1, tripup-widget-2" data-components="search, itinerary, products"
-        src="https://widget.my-cruise-excursion.com/itinerary/js/main.js"></script>
+        src="https://widget.my-cruise-excursion.com/itinerary/js/main.min.js"></script>
 ```
 
 #### iFrame parameters
@@ -38,18 +50,6 @@ In data attributes of your container you can store the start parameter. In the f
 | port_id | optional | Itinerary item id | *1*
 | port_date | optional | Itinerary port date | *2019-04-12* Format: YYYY-MM-DD
 | product | optional | Selected product | *PMI-001-01-EN*
-
-#### iFrame domain
-
-By changing domain you can set from which shop the data should be loaded and which currency and language will be displayed.
-The have different shop listed in the following table.
-
-| widget src | shop | currency | language 
-| --- | --- | --- | ---
-| widget.my-cruise-excursion.com | my-cruise-excursion.com | USD | ENG
-| widget.my-cruise-excursion.co.uk | my-cruise-excursion.co.uk | GBP | ENG
-| widget.meine-landausfluege.de | meine-landausfluege.de | EUR | GER
-| widget.meine-landausfluege.ch | meine-landausfluege.ch | CHF | GER
 
 ## Native Integration into HTML page (without iFrame)
 
