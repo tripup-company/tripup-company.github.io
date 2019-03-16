@@ -7,25 +7,25 @@ This widget is a frontend client that uses Cruise and Booking APIs.
 There 2 option how you can use widget: using it as iframe or bind it directly as script into your page. 
 The simplst and most secure way to use this widget is to paste the following code into your html. It works well with every site, even with CMS systems. If you use widget in a iframe you can not modify anything inside iframe. The last option is more advanced and needs more technical skills, but it's allow you to change style inside the widget.
 
-### Iframe
+### iFrame
 You only need to past this code in your page and change initial parameter.
 
 ```html
- <script type="text/javascript">
-   var tripUpWidgetId = "tripUpWidget",
-       tripUpWidgetParameter = "customer=TEST-123&ship=AIDAprima&date=2019-03-05&duration=7&port_id=26&port_date=2019-03-10&sku=MCT-001-00-DE",
-       tripUpWidgetSrc = "https://widget.meine-landausfluege.de/itinerary/iframe-src.html?"+tripUpWidgetParameter;
-   function tuWidgetReceiveMessage(e) {
-       var t = e.data.split(':'), i = t[0];
-       -1 !== [tripUpWidgetSrc].indexOf(e.origin) && 'widgetResize' === i && (iframe = document.getElementById(tripUpWidgetId)) && (iframe.contentWindow || iframe.documentWindow) == e.source && (iframe.style.height = t[1] + 'px')
-   }
-   window.addEventListener ? window.addEventListener('message', tuWidgetReceiveMessage, !1) : window.attachEvent && window.attachEvent('onmessage', tuWidgetReceiveMessage), document.write("<iframe id='" + tripUpWidgetId + "' src='" + tripUpWidgetSrc + "' style='width: 100%; height: 100%; border: 0;' frameborder='0'></iframe>");
- </script>
+<div id="tripup-widget-1" data-customer="TA123" data-port-id="90"></div>
+<script async defer type="text/javascript" data-containers="tripup-widget-2, tripup-widget-2" data-components="search, itinerary, products"
+        src="https://widget.my-cruise-excursion.com/itinerary/js/main.js"></script>
 ```
+In data attributes of the script tag you should set initial parameters. See the following table.
 
-In tripUpWidgetParameter you can store the start parameter like the cruise, selected date, product etc. In the following table you can see the posible search parameter.
-You can set parameter by in this format parameter=value. Multiple parameters should be bind by ampersand.
-#### Iframe parameters
+| Name | Required | Description | Example value
+| --- | --- | --- | ---
+| ***containers*** | required | one or more container id separated by comma | tripup-widget-2, tripup-widget-2
+| ***components*** | optional | The widget contains 3 components. By default all 3 components will be loaded. You can define comma separed list of components you want to be shown  | search, itinerary, products
+
+
+In data attributes of your container you can store the start parameter like the cruise, selected date, product etc. In the following table you can see the posible search parameter.
+
+#### iFrame parameters
 
 The options in the following table as GET-parameters can be passed. This options define components initial state.
 
@@ -35,10 +35,22 @@ The options in the following table as GET-parameters can be passed. This options
 | ***ship*** | optional | Cruise ship name | *Azamara Pursuit*
 | ***date*** | optional | Cruise date | *2019-04-06* Format: YYYY-MM-DD
 | ***port_id*** | optional | Itinerary item id | *1*
-| ***port_date*** | optional | Itinerary port date | *2019-04-12*
-| ***sku*** | optional | Selected product sku | *10*
-| ***coupon*** | optional | You can set a coupon code to make some sale | TA-123-10p-ASDF
+| ***port_date*** | optional | Itinerary port date | *2019-04-12* Format: YYYY-MM-DD
+| ***coupon*** | optional | You can set a coupon code to make some sale | TA123-10p-ASDF
 | ***channel*** | optional | You can use this field to send some additional information, that will be shown in your reports | My-Custom-Channel
+| ***product*** | optional | Selected product | *PMI-001-01-EN*
+
+#### iFrame domain
+
+By changing domain you can set from which shop the data should be loaded and which currency and language will be displayed.
+The have different shop listed in the following table.
+
+| widget src | shop | currency | language 
+| --- | --- | --- | ---
+| widget.my-cruise-excursion.com | my-cruise-excursion.com | USD | ENG
+| widget.my-cruise-excursion.co.uk | my-cruise-excursion.co.uk | GBP | ENG
+| widget.meine-landausfluege.de | meine-landausfluege.de | EUR | GER
+| widget.meine-landausfluege.ch | meine-landausfluege.ch | CHF | GER
 
 ## Native Integration into HTML page (without iFrame)
 
