@@ -42,7 +42,8 @@ In data attributes of your container you can store the start parameter. In the f
 | coupon | optional | You can set a coupon code to make some sale | TA123-10p-ASDF
 | channel | optional | You can use this field to send some additional information, that will be shown in your reports | My-Custom-Channel
 | ***The following parametes define the inital state for widget like the cruise, selected date, product etc.***
-| components | optional | The widget contains 3 components. By default all 3 components will be loaded. You can define comma separed list of components you want to be shown  | search, itinerary, products| ship | optional | Cruise ship name | *Azamara Pursuit*
+| components | optional | The widget contains 3 components. By default all 3 components will be loaded. You can define comma separed list of components you want to be shown  | search, itinerary, products
+| ship | optional | Cruise ship name | *Azamara Pursuit*
 | date | optional | Cruise date | *2019-04-06* Format: YYYY-MM-DD
 | port_id | optional | Itinerary item id | *1*
 | port_date | optional | Itinerary port date | *2019-04-12* Format: YYYY-MM-DD
