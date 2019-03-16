@@ -24,7 +24,9 @@ You only need to past this code in your page and change initial parameter.
 
 ```html
 <div id="tripup-widget-1" data-customer="TA123" data-port-id="90"></div>
-<script async defer type="text/javascript" data-containers="tripup-widget-1, tripup-widget-2" data-components="search, itinerary, products"
+<script async defer type="text/javascript" 
+        data-containers="tripup-widget-1, tripup-widget-2" 
+        data-components="search, itinerary, products"
         src="https://widget.my-cruise-excursion.com/itinerary/js/main.min.js"></script>
 ```
 
