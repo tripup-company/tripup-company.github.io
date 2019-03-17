@@ -61,18 +61,23 @@ Requirements:
 
 Installation:
 
-1. The TripUp widget contains its own loader component, that will be overlayed on loading.
+1 The TripUp widget contains its own loader component, that will be overlayed on loading.
 If you need the loader icon component, you have to add the following stylesheet and JavaScript to the <head> part in HTML document:
+
 ```html
 <link rel="stylesheet" type="text/css" href="https://widget.meine-landausfluege.de/itinerary/css/tripup-loader.min.css">
 <script src="https://widget.meine-landausfluege.de/itinerary/js/loader.min.js" id="tripup-loader">
 ```
-2. Next the widget core js script has to be added:
+
+2 Next the widget core js script has to be added:
+
 ```html
 <script src="https://widget.meine-landausfluege.de/itinerary/js/main.min.js" id="tripup-main"></script>
 ```
-3. The initial part of widget script should be added to the head part of document or before the end of body tag.
+
+3 The initial part of widget script should be added to the head part of document or before the end of body tag.
 You can only show some specific component. Just don't configure components you don't need.
+
 ```html
  <script type="text/javascript">
   TripUpMain.Init({
@@ -108,7 +113,7 @@ You can only show some specific component. Just don't configure components you d
  </script>
 ```
 
-4. The widget containers have to be added inside the body tag of document. Each component container should have the id defined in Init Script above for this component. In this example we definded ids "tripup-search", "itinerary-holder", "products-holder" those you can see below too.
+4 The widget containers have to be added inside the body tag of document. Each component container should have the id defined in Init Script above for this component. In this example we definded ids "tripup-search", "itinerary-holder", "products-holder" those you can see below too.
 
 ```html
 <!--Start TripUp Widget Container-->
