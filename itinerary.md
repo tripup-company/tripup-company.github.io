@@ -41,18 +41,22 @@ In data attributes of your container you can store the start parameter. In the f
 | customer | required | Your Partner-ID | TA123
 | coupon | optional | You can set a coupon code to make some sale | TA123-10p-ASDF
 | channel | optional | You can use this field to send some additional information, that will be shown in your reports | My-Custom-Channel
-| ***The following parametes define the inital state for widget like the cruise, selected date, product etc.***
 | components | optional | The widget contains 3 components. By default all 3 components will be loaded. You can define comma separed list of components you want to be shown  | search, itinerary, products
-| ship | optional | Cruise ship name | *Azamara Pursuit*
-| date | optional | Cruise date | *2019-04-06* Format: YYYY-MM-DD
-| duration | optional | Cruise duration in days | 7
-| port_id | optional | Itinerary item id | *1*
+| ***The following parameter combination allow you to show whole itinerary with products to each port. You need to set at least cruise data***
+| ship | required | Cruise ship name | *Azamara Pursuit*
+| date | required | Cruise date | *2019-04-06* Format: YYYY-MM-DD
+| duration | required | Cruise duration in days | 7
+| port_id | optional | Itinerary item id. Only needed if you want to deep navigate the user to selected product | *1*
+| port_date | optional | Itinerary port date. Only needed if you want to deep navigate the user to selected product | *2019-04-12* Format: YYYY-MM-DD
+| product | optional | Selected product. Only needed if you want to deep navigate the user to selected product | *PMI-001-01-EN*
+| ***If you only want to show products by port without itinerary, you have to use the following combination***
+| port_id | required | Itinerary item id | *1*
 | port_date | optional | Itinerary port date | *2019-04-12* Format: YYYY-MM-DD
-| product | optional | Selected product | *PMI-001-01-EN*
+| product | optional | Selected product. Only needed if you want to deep navigate the user to selected product | *PMI-001-01-EN*
 
 ## Native Integration into HTML page (without iFrame)
 
-The iFrame technik doesn't allow you to change the style of widget. But you can do it, if you integrate the widget script native in your site. This is less secure, because of script conflicts and you should test it before publish it live. 
+The iFrame technik doesn't allow you to change the style of widget. But you can do it, if you integrate the widget script native in your site. This is less secure, because of possible script conflicts and you should test it before publish it live. 
 You should also choose this integration type if you want to use components separated from each other or define different containers for them.
 
 Requirements:
@@ -60,21 +64,22 @@ Requirements:
 - You need an API Token so the widget is able to access our API. Please ask our it support for access.
 
 Installation:
-If you need the loader icon component than you have to add the following stylesheet and JavaScript to the <head> part in HTML document:
+
+1. The TripUp widget contains its own loader component, that will be overlayed on loading.
+If you need the loader icon component, you have to add the following stylesheet and JavaScript to the <head> part in HTML document:
 
 ```html
 <link rel="stylesheet" type="text/css" href="https://widget.meine-landausfluege.de/itinerary/css/tripup-loader.min.css">
 <script src="https://widget.meine-landausfluege.de/itinerary/js/loader.min.js" id="tripup-loader">
 ```
 
-Next the widget core js script must be added:
+2. Next the widget core js script has to be added:
 
 ```html
-<script src="https://widget.meine-landausfluege.de/itinerary/js/loader.min.js" id="tripup-loader"></script>
 <script src="https://widget.meine-landausfluege.de/itinerary/js/main.min.js" id="tripup-main"></script>
 ```
 
-The initial part of widget script should be added to the head part of document or before the end of body tag:
+3. The initial part of widget script should be added to the head part of document or before the end of body tag:
  
 ```html
  <script type="text/javascript">
@@ -132,7 +137,7 @@ The initial part of widget script should be added to the head part of document o
  </script>
 ```
 
-The widget container inside the body tag of document must be added:
+4. The widget containers have to be added inside the body tag of document. Each component container should have the id defined in Init Script above for this component. In this example we definded ids "tripup-search", "itinerary-holder", "products-holder" those you can see below too.
 
 ```html
 <!--Start TripUp Widget Container-->
@@ -149,14 +154,14 @@ The widget container inside the body tag of document must be added:
 <!-- End TripUp Widget Container-->
 ```
 
-## Component and events
+## Components and events
 
-Component are independent from each other. They communicate over event with each other.
-Below you will finde the event, those will be sent and recieved by component.
+Components are independent from each other. They communicate through events with each other.
+Below you will find the events, those will be sent and recieved by components.
 
 ### Search form component
 
-This component allow end user to select cruise or port .
+This component allows end user to select cruise or port.
 
 #### Dispatched events
 
