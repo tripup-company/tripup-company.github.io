@@ -61,7 +61,7 @@ Requirements:
 
 Installation:
 
-1. The TripUp widget contains its own loader component, that will be overlayed on loading.
+1.The TripUp widget contains its own loader component, that will be overlayed on loading.
 If you need the loader icon component, you have to add the following stylesheet and JavaScript to the <head> part in HTML document:
 
 ```html
@@ -69,13 +69,13 @@ If you need the loader icon component, you have to add the following stylesheet 
 <script src="https://widget.meine-landausfluege.de/itinerary/js/loader.min.js" id="tripup-loader">
 ```
 
-2. Next the widget core js script has to be added:
+2.Next the widget core js script has to be added:
 
 ```html
 <script src="https://widget.meine-landausfluege.de/itinerary/js/main.min.js" id="tripup-main"></script>
 ```
 
-3. The initial part of widget script should be added to the head part of document or before the end of body tag.
+3.The initial part of widget script should be added to the head part of document or before the end of body tag.
 You can only show some specific component. Just don't configure components you don't need.
  
 ```html
