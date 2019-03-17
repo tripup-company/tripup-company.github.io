@@ -46,13 +46,9 @@ In data attributes of your container you can store the start parameter. In the f
 | ship | required | Cruise ship name | *Azamara Pursuit*
 | date | required | Cruise date | *2019-04-06* Format: YYYY-MM-DD
 | duration | required | Cruise duration in days | 7
-| port_id | optional | Itinerary item id. Only needed if you want to deep navigate the user to selected product | *1*
-| port_date | optional | Itinerary port date. Only needed if you want to deep navigate the user to selected product | *2019-04-12* Format: YYYY-MM-DD
-| product | optional | Selected product. Only needed if you want to deep navigate the user to selected product | *PMI-001-01-EN*
 | ***If you only want to show products by port without itinerary, you have to use the following combination***
-| port_id | required | Itinerary item id | *1*
-| port_date | optional | Itinerary port date | *2019-04-12* Format: YYYY-MM-DD
-| product | optional | Selected product. Only needed if you want to deep navigate the user to selected product | *PMI-001-01-EN*
+| port_id | required | Id or name of port | *1* or *Mallorca*
+| port_date | optional | Selected date. By default is today  | *2019-04-12* Format: YYYY-MM-DD
 
 ## Native Integration into HTML page (without iFrame)
 
@@ -79,14 +75,14 @@ If you need the loader icon component, you have to add the following stylesheet 
 <script src="https://widget.meine-landausfluege.de/itinerary/js/main.min.js" id="tripup-main"></script>
 ```
 
-3. The initial part of widget script should be added to the head part of document or before the end of body tag:
+3. The initial part of widget script should be added to the head part of document or before the end of body tag.
+You can only show some specific component. Just don't configure components you don't need.
  
 ```html
  <script type="text/javascript">
   TripUpMain.Init({
       KEY: '<API Token>',
       CUSTOMER_ID: "<Your-Partner-Id>",
-      toggleComponents: true,
       // Contain all comonents and its default init parameters
       components: {
           search: {
@@ -100,39 +96,19 @@ If you need the loader icon component, you have to add the following stylesheet 
                   duration: 7,
                   ship: "Azamara Pursuit"
               },
-              // Allow rewrite default params from url
-              passUrlParams: true,      
               // Selector for itinerary list                                          
               container: '#itinerary-holder'
           },
           products: {
-               // Default init parameters
-              params: {id: 64, date: '2019-02-13'},
-                // Allow rewrite default params from url
-              passUrlParams: true,
+              // Those parameters can be added if you only want to show products by port without itinerary.
+              // params: { 
+              //    date: "2019-04-06",
+              //    id: 90,
+              // },
                // Selector for products list   
               container: '#products-holder',
-              // Allowed callbacks
-              moreClick: function (data) {
-                   alert("moreClick");
-                   return false;
-              },
-              chooseClick: function (data) {
-                  alert("chooseClick");
-                  return false;
-              }
           }
       },
-      // Define the components initial state                
-      state: {
-           itinerary: {
-               port: 1,
-               date: '2019-04-12'
-           },
-           products: {
-               product: "PMI-011-00-DE"
-           }
-      }
   }, true, '<some domain>');
  </script>
 ```
