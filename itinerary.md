@@ -2,8 +2,7 @@
 
 This widget is a frontend client that uses Cruise and Booking APIs.
 
-**Demo:** 
-https://widget.meine-landausfluege.de/itinerary/iframe.html
+[**See here our Demo Widget** ](https://widget.meine-landausfluege.de/itinerary/iframe.html)
 
 ## Getting Started
 
