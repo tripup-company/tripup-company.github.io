@@ -25,7 +25,7 @@ The have different shop listed in the following table.
 You only need to past this code in your page and change initial parameter.
 
 ```html
-<div id="tripup-widget-1" data-customer="TA123" data-port-id="90"
+<div id="tripup-widget-1" data-customer="TA123" data-port_id="90"
      data-components="search, itinerary, products"></div>
 <script async defer type="text/javascript" 
         data-containers="tripup-widget-1, tripup-widget-2" 
