@@ -49,7 +49,8 @@ In data attributes of your container you can store the start parameter. In the f
 | date | required | Cruise date | *2019-04-06* Format: YYYY-MM-DD
 | duration | required | Cruise duration in days | 7
 | ***If you only want to show products by port without itinerary, you have to use the following combination***
-| port_id | required | Id or name of port | *1* or *Mallorca*
+| port_id | required* | Either Port ID from our Database | *90*
+| port_name | required* | Or Port name should be set | *Mallorca*
 | port_date | optional | Selected date. By default is today  | *2019-04-12* Format: YYYY-MM-DD
 
 ## Native Integration into HTML page (without iFrame)
