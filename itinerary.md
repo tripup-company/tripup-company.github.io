@@ -52,6 +52,8 @@ In data attributes of your container you can store the start parameter. In the f
 | port_id | required* | Either Port ID from our Database | *90*
 | port_name | required* | Or Port name should be set | *Mallorca*
 | port_date | optional | Selected date. By default is today  | *2019-04-12* Format: YYYY-MM-DD
+| shortproducts | optional | Show only 3 first products and display more on button click  | false
+| showtitles | optional | Show titles above blocks  | false
 
 ## Native Integration into HTML page (without iFrame)
 
@@ -92,15 +94,14 @@ You can only show some specific component. Just don't configure components you d
               //selector for search form conteiner
               container: '#tripup-search'
           },
-          itinerary: {
-              // Default init parameters
-              params: {
+          itinerary: {              
+              params: { // Default init parameters
                   date: "2019-04-06",
                   duration: 7,
                   ship: "Azamara Pursuit"
               },
-              // Selector for itinerary list                                          
-              container: '#itinerary-holder'
+              showTitle: false, // Show Title above container. Default false                                          
+              container: '#itinerary-holder' // Selector for itinerary list
           },
           products: {
               // Those parameters can be added if you only want to show products by port without itinerary.
@@ -108,8 +109,9 @@ You can only show some specific component. Just don't configure components you d
               //    date: "2019-04-06",
               //    id: 90,
               // },
-               // Selector for products list   
-              container: '#products-holder',
+              showTitles: false, // Show titles above containers. Default false
+              shortProducts: false, // Show only first 3 products and display more on button click. Default false.
+              container: '#products-holder', // Selector for products list
           }
       },
   }, true, '<some domain>');
