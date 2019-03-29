@@ -67,6 +67,12 @@ Requirements:
 Installation:
 
 1 The TripUp widget contains its own loader component, that will be overlayed on loading.
+
+First of all the following stylesheet link should be added to the head part of HTML document: 
+```html
+<link rel="stylesheet" type="text/css" href="<some domain and subpath>/css/tripup.min.css">
+```
+
 If you need the loader icon component, you have to add the following stylesheet and JavaScript to the <head> part in HTML document:
 
 ```html
