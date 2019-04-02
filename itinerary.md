@@ -11,7 +11,7 @@ The simplst and most secure way to use this widget is to paste the following cod
 
 #### Domain
 
-We have several domains for different markts. By changing domain you can set from which shop the data should be loaded and which currency and language will be displayed.
+We have several domains for different markets. By changing domain you can set from which shop the data should be loaded and which currency and language will be displayed.
 The have different shop listed in the following table.
 
 | widget src | shop | currency | language 
