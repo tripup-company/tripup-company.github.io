@@ -5,7 +5,7 @@ This site discribs the possibility to integrate with our sites.
 my-cruise-excursion.com (co.uk) or meine-landausfluege.de (.ch)
 
 We have got 4 intergation types for our partners, those are disribed bellow. 
-In the navigation menue above you can quick jump to the integration type you are interessted in.
+In the navigation menu above you can quick jump to the integration type you are interessted in.
 
 ## Affiliate links
 There are 2 types of partner links.
@@ -48,13 +48,13 @@ We have serveral shops for different markets. Please choose correct shop for you
 | meine-landausfluege.ch | CHF | GER
 
 ## Simple Widget
-The simple widget allow you to show some sub set of product on a cruise route or in a port.
-Please read this [documentation](https://tripup-company.github.io/widget.html).
+The simple widget allow you to show a subset of products on an itinerary or in a port.
+Please follow this [link](https://tripup-company.github.io/widget.html) to learn more.
 
 ## Itinerary Widget
 This is the new version of widget with itinerary navigation and full product listing.
-Please read this [documentation](https://tripup-company.github.io/itinerary.html).
+Please follow this [link](https://tripup-company.github.io/itinerary.html) to learn more.
 
 ## REST API
 The REST API's allow you to use our data for cusom integration.
-Please read this [documentation](https://tripup-company.github.io/api.html).
+Please follow this [link](https://tripup-company.github.io/api.html) to learn more.
