@@ -38,8 +38,7 @@ For the deeplinking to our itinerary page you have to set the cruise route by se
 
 #### Domains
 
-We have several domains for different markts. By changing domain you can set from which shop the data should be loaded and which currency and language will be displayed.
-The have different shop listed in the following table.
+We have serveral shops for different markets. Please choose correct shop for your localtion. 
 
 | shop | currency | language 
 | --- | --- | ---
