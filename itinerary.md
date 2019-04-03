@@ -194,3 +194,19 @@ This component shows products for selected cruise or port
 | *LOADED_EVENT_NAME* | *'TripUpProductsLoaded'* | `{[<product object>]}` |  |
 | *PRODUCT_SELECT_EVENT_NAME* | *'TripUpProductSelected'* | `{<product object>}` | |
 | *SELECT_PORT_EVENT_NAME* | *'TripUpSelectItineraryPort'* | `{port: <port_id or "first" or"last">, [date: <cruise date>]}` | if **port** = first or last than date will be ignored  |
+
+## Troubleshooting
+
+### IE 10 and 11 compatibility
+For InternetExplorer compatibility the following script should be added firstly
+
+```javascript
+<script type="text/javascript">
+      if (/MSIE \d.|Trident.*rv:\d./.test(navigator.userAgent)) {
+          var el = document.createElement('script');
+          el.src = "https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.2.5/polyfill.min.js";
+          el.addEventListener('load',function(){el.id="tripup-polyfill";});
+          document.head.appendChild(el);
+      }
+</script>
+```
