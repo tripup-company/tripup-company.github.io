@@ -1,18 +1,18 @@
 # TripUp Itinerary Widget
 
-This widget is a frontend client that uses Cruise and Booking APIs.
+This widget is a frontend client that uses TripUp Cruise and Booking APIs.
 
 [**See here our Demo Widget** ](https://widget.meine-landausfluege.de/itinerary/iframe.html)
 
 ## Getting Started
 
-There 2 option how you can use widget: using it as iframe or bind it directly as script into your page. 
-The simplst and most secure way to use this widget is to paste the following code into your html. It works well with every site, even with CMS systems. If you use widget in a iframe you can not modify anything inside iframe. The last option is more advanced and needs more technical skills, but it's allow you to change style inside the widget.
+There are two option how you can use this widget: using it as an iframe or bind it directly as a script into your page. 
+The simplest and most secure way to use this widget is to paste the iframe code into your html (see iframe description below). It works well with every site, even with CMS systems. If you use widget in an iframe you can not modify anything inside the iframe. The secound option is more advanced and needs more technical skills, but it allows you to change style inside the widget.
 
 #### Domain
 
 We have several domains for different markets. By changing domain you can set from which shop the data should be loaded and which currency and language will be displayed.
-The have different shop listed in the following table.
+The different shops are listed in the following table.
 
 | widget src | shop | currency | language 
 | --- | --- | --- | ---
@@ -22,7 +22,7 @@ The have different shop listed in the following table.
 | widget.meine-landausfluege.ch | meine-landausfluege.ch | CHF | GER
 
 ### iFrame
-You only need to past this code in your page and change initial parameter.
+You only need to past this code in your page and change initial parameter. See parameter description below.
 
 ```html
 <div id="tripup-widget-1" data-customer="TA123" data-port_id="90"
