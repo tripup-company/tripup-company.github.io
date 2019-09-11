@@ -47,17 +47,17 @@ In den Datenattributen Ihres Containers können Sie den Startparameter hinterleg
 
 | Name | Erforderlich | Beschreibung | Beispiel 
 | --- | --- | --- | ---
-| customer | erforderlich | Ihre Partner-ID | TA123
+| *customer* | erforderlich | Ihre Partner-ID | TA123
 | coupon | optional | Sie können einen Gutscheincode festlegen | TA123-10p-ASDF
 | channel | optional | In diesem Feld können Sie zusätzliche Informationen senden, die in Ihren Berichten angezeigt werden | My-Custom-Channel
 | components | optional | Das Widget enthält 3 Komponenten. Standardmäßig werden alle 3 Komponenten geladen. Sie können eine durch Kommas getrennte Liste der Komponenten definieren, die angezeigt werden sollen  | search, itinerary, products
 | ***Mit der folgenden Parameterkombination können Sie die gesamte Route mit Produkten zu jedem Hafen anzeigen. Sie müssen mindestens die Reisedaten einstellen***
-| ship | erforderlich | Schiffsname | *Azamara Pursuit*
+| *ship* | erforderlich | Schiffsname | *Azamara Pursuit*
 | date | optional | Reisedatum | *2019-04-06* Format: YYYY-MM-DD
 | duration | optional | Reisedauer in Tagen | 7
 | ***Wenn Sie nur Produkte nach Hafen ohne Reiseroute anzeigen möchten, müssen Sie die folgende Kombination verwenden***
-| port_id | required* | Entweder Port ID aus unserer Datenbank | *90*
-| port_name | required* | Oder Portname sollte gesetzt sein | *Mallorca*
+| *port_id* | erforderlich | Entweder Port ID aus unserer Datenbank | *90*
+| *port_name* | erforderlich | Oder Portname sollte gesetzt sein | *Mallorca*
 | port_date | optional | Gewähltes Datum. Standardmäßig ist heute  | *2019-04-12* Format: YYYY-MM-DD
 | shortproducts | optional | Zeige nur 3 erste Produkte und mehr auf Knopfdruck an  | false
 | showtitles | optional | Überschrifte über Komponenten-Blöcken anzeigen  | false
