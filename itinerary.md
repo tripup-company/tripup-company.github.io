@@ -43,7 +43,7 @@ In data attributes of your container you can store the start parameter. In the f
 | customer | required | Your Partner-ID | TA123
 | coupon | optional | You can set a coupon code to make some sale | TA123-10p-ASDF
 | channel | optional | You can use this field to send some additional information, that will be shown in your reports | My-Custom-Channel
-| components | optional | The widget contains 3 components. By default all 3 components will be loaded. You can define comma separed list of components you want to be shown  | search, itinerary, products
+| components | optional | The widget contains 3 components. By default all 3 components will be loaded. You can define comma separated list of components you want to be shown  | search, itinerary, products
 | ***The following parameter combination allow you to show whole itinerary with products to each port. You need to set at least cruise data***
 | ship | required | Cruise ship name | *Azamara Pursuit*
 | date | required | Cruise date | *2019-04-06* Format: YYYY-MM-DD
@@ -145,7 +145,7 @@ You can only show some specific component. Just don't configure components you d
 ## Components and events
 
 Components are independent from each other. They communicate through events with each other.
-Below you will find the events, those will be sent and recieved by components.
+Below you will find the events, those will be sent and received by components.
 
 ### Search form component
 

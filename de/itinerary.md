@@ -45,61 +45,59 @@ Sie können mehr als ein Widget auf Ihrer Seite verwenden. Standardmäßig ist d
 
 In den Datenattributen Ihres Containers können Sie den Startparameter hinterlegen. In der folgenden Tabelle sehen Sie den möglichen Anfangsparameter.
 
-| Name | Required | Description | Example value
+| Name | Erforderlich | Beschreibung | Beispiel 
 | --- | --- | --- | ---
-| customer | required | Your Partner-ID | TA123
-| coupon | optional | You can set a coupon code to make some sale | TA123-10p-ASDF
-| channel | optional | You can use this field to send some additional information, that will be shown in your reports | My-Custom-Channel
-| components | optional | The widget contains 3 components. By default all 3 components will be loaded. You can define comma separed list of components you want to be shown  | search, itinerary, products
-| ***The following parameter combination allow you to show whole itinerary with products to each port. You need to set at least cruise data***
-| ship | required | Cruise ship name | *Azamara Pursuit*
-| date | required | Cruise date | *2019-04-06* Format: YYYY-MM-DD
-| duration | required | Cruise duration in days | 7
-| ***If you only want to show products by port without itinerary, you have to use the following combination***
-| port_id | required* | Either Port ID from our Database | *90*
-| port_name | required* | Or Port name should be set | *Mallorca*
-| port_date | optional | Selected date. By default is today  | *2019-04-12* Format: YYYY-MM-DD
-| shortproducts | optional | Show only 3 first products and display more on button click  | false
-| showtitles | optional | Show titles above blocks  | false
-| showport | optional | Show port name and description | false
+| customer | erforderlich | Ihre Partner-ID | TA123
+| coupon | optional | Sie können einen Gutscheincode festlegen | TA123-10p-ASDF
+| channel | optional | In diesem Feld können Sie zusätzliche Informationen senden, die in Ihren Berichten angezeigt werden | My-Custom-Channel
+| components | optional | Das Widget enthält 3 Komponenten. Standardmäßig werden alle 3 Komponenten geladen. Sie können eine durch Kommas getrennte Liste der Komponenten definieren, die angezeigt werden sollen  | search, itinerary, products
+| ***Mit der folgenden Parameterkombination können Sie die gesamte Route mit Produkten zu jedem Hafen anzeigen. Sie müssen mindestens die Reisedaten einstellen***
+| ship | erforderlich | Schiffsname | *Azamara Pursuit*
+| date | optional | Reisedatum | *2019-04-06* Format: YYYY-MM-DD
+| duration | optional | Reisedauer in Tagen | 7
+| ***Wenn Sie nur Produkte nach Hafen ohne Reiseroute anzeigen möchten, müssen Sie die folgende Kombination verwenden***
+| port_id | required* | Entweder Port ID aus unserer Datenbank | *90*
+| port_name | required* | Oder Portname sollte gesetzt sein | *Mallorca*
+| port_date | optional | Gewähltes Datum. Standardmäßig ist heute  | *2019-04-12* Format: YYYY-MM-DD
+| shortproducts | optional | Zeige nur 3 erste Produkte und mehr auf Knopfdruck an  | false
+| showtitles | optional | Überschrifte über Komponenten-Blöcken anzeigen  | false
+| showport | optional | Portname und Beschreibung anzeigen | false
 
-## Native Integration into HTML page (without iFrame)
+## Native Integration in HTML-Seite (ohne iFrame)
 
-The iFrame technik doesn't allow you to change the style of widget. But you can do it, if you integrate the widget script native in your site. This is less secure, because of possible script conflicts and you should test it before publish it live. 
-You should also choose this integration type if you want to use components separated from each other or define different containers for them.
+Mit der iFrame-Technik können Sie den Stil des Widgets nicht ändern. 
+Sie können dies jedoch tun, wenn Sie das Widget-Skript nativ in Ihre Site integrieren. 
+Dies ist aufgrund möglicher Skriptkonflikte weniger sicher, und Sie sollten es testen, bevor Sie es live veröffentlichen.
+Sie sollten diesen Integrationstyp auch wählen, wenn Sie voneinander getrennte Komponenten verwenden oder unterschiedliche Container für diese definieren möchten.
 
-Requirements:
-- The native integration requires jQuery Script: https://jquery.com/
-- You need an API Token so the widget is able to access our API. Please ask our it support for access.
+Voraussetzungen:
+- Die native Integration erfordert jQuery Script: https://jquery.com/
+- Sie benötigen ein API-Token, damit das Widget auf unsere API zugreifen kann. Bitte fragen Sie unseren IT-Support nach dem Zugang.
 
 Installation:
 
-1 The TripUp widget contains its own loader component, that will be overlayed on loading.
+1. Das TripUp-Widget enthält eine eigene Loader-Komponente, die beim Laden eingeblendet wird.
+  <br>Zunächst sollte der folgende Stylesheet-Link zum head des HTML-Dokuments hinzugefügt werden:
+   ```html
+   <link rel="stylesheet" type="text/css" href="<some domain and subpath>/css/tripup.min.css">
+   ```
+   Wenn Sie die Loader-Symbolkomponente benötigen, müssen Sie das folgende Stylesheet und JavaScript zum Teil head im HTML-Dokument hinzufügen:
+   ```html
+   <link rel="stylesheet" type="text/css" href="https://widget.meine-landausfluege.de/itinerary/css/tripup-loader.min.css">
+   <script src="https://widget.meine-landausfluege.de/itinerary/js/loader.min.js" id="tripup-loader">
+   ```
 
-First of all the following stylesheet link should be added to the head part of HTML document: 
-```html
-<link rel="stylesheet" type="text/css" href="<some domain and subpath>/css/tripup.min.css">
-```
+2. Als nächstes muss das js-Skript des Widget-Kerns hinzugefügt werden:
+   ```html
+   <script src="https://widget.meine-landausfluege.de/itinerary/js/main.min.js" id="tripup-main"></script>
+   ```
 
-If you need the loader icon component, you have to add the following stylesheet and JavaScript to the <head> part in HTML document:
+3. Der erste Teil des Widget-Skripts sollte zum head des Dokuments oder vor dem Ende des Body-Tags hinzugefügt werden.
+  <br>Sie können nur eine bestimmte Komponente anzeigen. Konfigurieren Sie einfach keine Komponenten, die Sie nicht benötigen.
 
-```html
-<link rel="stylesheet" type="text/css" href="https://widget.meine-landausfluege.de/itinerary/css/tripup-loader.min.css">
-<script src="https://widget.meine-landausfluege.de/itinerary/js/loader.min.js" id="tripup-loader">
-```
-
-2 Next the widget core js script has to be added:
-
-```html
-<script src="https://widget.meine-landausfluege.de/itinerary/js/main.min.js" id="tripup-main"></script>
-```
-
-3 The initial part of widget script should be added to the head part of document or before the end of body tag.
-You can only show some specific component. Just don't configure components you don't need.
-
-```html
- <script type="text/javascript">
-  TripUpMain.Init({
+   ```html
+   <script type="text/javascript">
+    TripUpMain.Init({
       KEY: '<API Token>',
       CUSTOMER_ID: "<Your-Partner-Id>",
       // Contain all comonents and its default init parameters
@@ -128,14 +126,13 @@ You can only show some specific component. Just don't configure components you d
               container: '#products-holder', // Selector for products list
           }
       },
-  }, true, '<some domain>');
- </script>
-```
+    }, true, '<some domain>');
+    </script>
+   ```
 
-4 The widget containers have to be added inside the body tag of document. Each component container should have the id defined in Init Script above for this component. In this example we definded ids "tripup-search", "itinerary-holder", "products-holder" those you can see below too.
-
-```html
-<!--Start TripUp Widget Container-->
+4. Die Widget-Container müssen innerhalb des Body-Tags des Dokuments hinzugefügt werden. Jeder Komponentencontainer sollte die ID haben, die oben im Init-Skript für diese Komponente definiert wurde. In diesem Beispiel haben wir die IDs "tripup-search", "route-holder", "products-holder" definiert, die Sie auch unten sehen können.
+   ```html
+   <!--Start TripUp Widget Container-->
     <div class="tripup-block">
       <div id="tripup-search"></div>
       <div class="tripup-loader"></div>
@@ -146,48 +143,48 @@ You can only show some specific component. Just don't configure components you d
         </div>
       </div>
     </div>
-<!-- End TripUp Widget Container-->
-```
+   <!-- End TripUp Widget Container-->
+   ```
 
-## Components and events
+## Komponenten und Ereignisse
 
-Components are independent from each other. They communicate through events with each other.
-Below you will find the events, those will be sent and recieved by components.
+Komponenten sind voneinander unabhängig. Sie kommunizieren durch Ereignisse miteinander.
+Nachfolgend finden Sie die Ereignisse, die von Komponenten gesendet und empfangen werden.
 
-### Search form component
+### Suchformular-Komponente
 
-This component allows end user to select cruise or port.
+Mit dieser Komponente kann der Endbenutzer eine Kreuzfahrt oder einen Hafen auswählen.
 
-#### Dispatched events
+#### Ausgelöste Ereignisse
 
 | Constant name | Default value | Payload example | Comments |
 | --- | --- | --- | --- |
 | *CRUISE_SELECT_EVENT_NAME* | *'TripUpUpdateByCruise'* | `{ date: "2019-02-18", duration: 14, id: 10762, ship: "AIDAbella"}`| **id** => internal cruiseID |
 | *PORT_SELECT_EVENT_NAME* | *'TripUpUpdateByPort'* |```{id: 27,  subid: 42787 }``` | |
 
-### Itinerary component
+### Reiseplan-Komponente
 
-This component shows itinerary of selected cruise.
+Diese Komponente zeigt die Reiseroute der ausgewählten Kreuzfahrt an.
 
-#### Listened events
+#### Zuhörende Ereignisse
 
 | Constant name | Default value | Payload example | Comments |
 | --- | --- | --- | --- |
 | *CRUISE_SELECT_EVENT_LISTENER* | *'TripUpUpdateByCruise'* | ```{ date: "2019-02-18", duration: 14, id: 10762, ship: "AIDAbella"}``` | **id** => internal cruiseID  |
 | *SELECT_PORT_EVENT_LISTENER* | *'TripUpSelectItineraryPort'* | ```{port: <port_id or "first" or "last">, [date: <cruise date>]}``` | if **port** = first or last than date will be ignored |
 
-#### Dispatched events
+#### Gesendete Ereignisse
      
 | Constant name | Default value | Payload example | Comments |
 | --- | --- | --- | --- |
 | *ITINERARY_SELECT_EVENT_NAME* | *'TripUpSelectedItinerary'* | `{ship: "Azamara Pursuit", current: {…}, prev: null, next: {…}}` |  Current, prev, next are the itinerary objects |   
 | *LOADED_EVENT_NAME* | *'TripUpItineraryLoaded'* | `{ cruise: { date: "2019-04-06", duration: 7, port: "Lissabon", ship: "Azamara Pursuit""}, items: [ Iteinerary objects ]}}` |  |
 
-### Products component
+### Produkt-komponente
 
 This component shows products for selected cruise or port
 
-#### Listened events
+#### Zuhörende Ereignisse
 
 | Constant name | Default value | Payload example | Comments |
 | --- | --- | --- | --- |
@@ -195,7 +192,7 @@ This component shows products for selected cruise or port
 | *PORT_SELECT_EVENT_LISTENER* | *'TripUpUpdateByPort'* |```{id: 27,  subid: 42787 }``` | |
 | *ITINERARY_SELECT_EVENT_LISTENER* | *'TripUpSelectedItinerary'* | `{ship: "Azamara Pursuit", current: {…}, prev: null, next: {…}}` |  Current, prev, next are the itinerary objects |
 
-#### Dispatched events
+#### Gesendete Ereignisse
 
 | Constant name | Default value | Payload example | Comments |
 | --- | --- | --- | --- |
@@ -203,10 +200,10 @@ This component shows products for selected cruise or port
 | *PRODUCT_SELECT_EVENT_NAME* | *'TripUpProductSelected'* | `{<product object>}` | |
 | *SELECT_PORT_EVENT_NAME* | *'TripUpSelectItineraryPort'* | `{port: <port_id or "first" or"last">, [date: <cruise date>]}` | if **port** = first or last than date will be ignored  |
 
-## Troubleshooting
+## Fehlerbehebung
 
 ### IE 10 and 11 compatibility
-For InternetExplorer compatibility the following script should be added firstly
+Für die Kompatibilität mit dem InternetExplorer sollte zunächst das folgende Skript hinzugefügt werden
 
 ```javascript
 <script type="text/javascript">
