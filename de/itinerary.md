@@ -28,10 +28,11 @@ Siehe nachfolgende Parameterbeschreibung.
 
 #### iFrame Parameter
 
-Im Datenattribut "containers" des Script-Tags können Sie eine oder mehrere durch Komma getrennte Container-IDs festlegen. 
+Im "data-containers" -Attribut des Script-Tags können Sie eine oder mehrere durch Komma getrennte Container-IDs festlegen. 
 Sie können mehr als ein Widget auf Ihrer Seite verwenden. Standardmäßig ist die ID des Widget-Containers: "tripup-widget"
 
-In den Datenattributen Ihres Containers können Sie den Startparameter hinterlegen. In der folgenden Tabelle sehen Sie den möglichen Anfangsparameter.
+In den ***"data-"***-Attributen Ihres Containers können Sie den Startparameter hinterlegen. In der folgenden Tabelle sehen Sie den möglichen Anfangsparameter.
+Bitte beachten Sie, dass die nachfolgenden Parameter immer mit "data-" anfangen müssen.
 
 | Name | Erforderlich | Beschreibung | Beispiel 
 | --- | --- | --- | ---
