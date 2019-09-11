@@ -14,18 +14,6 @@ Die einfachste und sicherste Möglichkeit, dieses Widget zu verwenden, besteht d
 Es funktioniert gut mit jeder Webseite, auch mit CMS-Systemen. Wenn Sie Widget in einem Iframe verwenden, können Sie nichts im Iframe ändern. 
 Die zweite Option ist fortgeschrittener und erfordert mehr technische Fähigkeiten, aber Sie können den Stil innerhalb des Widgets ändern.
 
-#### Domänen
-
-Wir haben mehrere Domains für verschiedene Märkte. Durch einen Domainwechsel können Sie festlegen, aus welchem Shop die Daten geladen werden sollen und welche Währung und Sprache angezeigt wird.
-Die verschiedenen Märkte sind in der folgenden Tabelle aufgeführt.
-
-| Widget Src | Shop | Währung | Sprache 
-| --- | --- | --- | ---
-| widget.meine-landausfluege.de | meine-landausfluege.de | EUR | Deutsch
-| widget.meine-landausfluege.ch | meine-landausfluege.ch | CHF | Deutsch
-| widget.mycruiseexcursion.com | mycruiseexcursion.com | USD | Englisch
-| widget.mycruiseexcursion.co.uk | mycruiseexcursion.co.uk | GBP | Englisch
-
 ### iFrame
 Sie müssen nur diesen Code in Ihre Seite einfügen und ggf. die Initialisierungsparameter anpassen. 
 Siehe nachfolgende Parameterbeschreibung.
@@ -70,6 +58,18 @@ In den Datenattributen Ihres Containers können Sie den Startparameter hinterleg
 | shortproducts | optional | Zeige nur 3 erste Produkte und mehr auf Knopfdruck an  | false
 | showtitles | optional | Überschrifte über Komponenten-Blöcken anzeigen  | false
 | showport | optional | Portname und Beschreibung anzeigen | false
+
+#### Domänen
+
+Wir haben mehrere Domains für verschiedene Märkte. Durch einen Domainwechsel können Sie festlegen, aus welchem Shop die Daten geladen werden sollen und welche Währung und Sprache angezeigt wird.
+Die verschiedenen Märkte sind in der folgenden Tabelle aufgeführt.
+
+| Widget Src | Shop | Währung | Sprache 
+| --- | --- | --- | ---
+| widget.meine-landausfluege.de | meine-landausfluege.de | EUR | Deutsch
+| widget.meine-landausfluege.ch | meine-landausfluege.ch | CHF | Deutsch
+| widget.mycruiseexcursion.com | mycruiseexcursion.com | USD | Englisch
+| widget.mycruiseexcursion.co.uk | mycruiseexcursion.co.uk | GBP | Englisch
 
 ## Native Integration in HTML-Seite (ohne iFrame)
 
