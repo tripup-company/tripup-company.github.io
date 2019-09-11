@@ -16,8 +16,8 @@ The different shops are listed in the following table.
 
 | widget src | shop | currency | language 
 | --- | --- | --- | ---
-| widget.my-cruise-excursion.com | my-cruise-excursion.com | USD | ENG
-| widget.my-cruise-excursion.co.uk | my-cruise-excursion.co.uk | GBP | ENG
+| widget.mycruiseexcursion.com | mycruiseexcursion.com | USD | ENG
+| widget.mycruiseexcursion.co.uk | mycruiseexcursion.co.uk | GBP | ENG
 | widget.meine-landausfluege.de | meine-landausfluege.de | EUR | GER
 | widget.meine-landausfluege.ch | meine-landausfluege.ch | CHF | GER
 
@@ -54,6 +54,7 @@ In data attributes of your container you can store the start parameter. In the f
 | port_date | optional | Selected date. By default is today  | *2019-04-12* Format: YYYY-MM-DD
 | shortproducts | optional | Show only 3 first products and display more on button click  | false
 | showtitles | optional | Show titles above blocks  | false
+| showport | optional | Show port name and description | false
 
 ## Native Integration into HTML page (without iFrame)
 
