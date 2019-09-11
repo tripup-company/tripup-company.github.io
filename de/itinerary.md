@@ -31,11 +31,11 @@ Sie müssen nur diesen Code in Ihre Seite einfügen und ggf. die Initialisierung
 Siehe nachfolgende Parameterbeschreibung.
 
 ```html
-<div id="tripup-widget-1" data-customer="TA123" data-port_id="90"
+<div id="tripup-widget-1" data-customer="TA123" data-port_name="St. Petersburg"
      data-components="search, itinerary, products"></div>
 <script async defer type="text/javascript" 
         data-containers="tripup-widget-1, tripup-widget-2" 
-        src="https://widget.my-cruise-excursion.com/itinerary/js/main.min.js"></script>
+        src="https://widget.widget.meine-landausfluege.de/itinerary/js/main.min.js"></script>
 ```
 
 #### iFrame Parameter
