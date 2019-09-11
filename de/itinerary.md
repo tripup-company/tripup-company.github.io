@@ -23,7 +23,7 @@ Siehe nachfolgende Parameterbeschreibung.
      data-components="search, itinerary, products"></div>
 <script async defer type="text/javascript" 
         data-containers="tripup-widget-1, tripup-widget-2" 
-        src="https://widget.widget.meine-landausfluege.de/itinerary/js/main.min.js"></script>
+        src="https://widget.meine-landausfluege.de/itinerary/js/main.min.js"></script>
 ```
 
 #### iFrame Parameter
