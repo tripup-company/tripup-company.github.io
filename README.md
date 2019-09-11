@@ -2,7 +2,7 @@
 
 This site discribs the possibility to integrate with our sites.
 
-my-cruise-excursion.com (co.uk) or meine-landausfluege.de (.ch)
+mycruiseexcursion.com (co.uk) or meine-landausfluege.de (.ch)
 
 We have got 4 intergation types for our partners, those are disribed bellow. 
 In the navigation menu above you can quick jump to the integration type you are interessted in.
@@ -12,11 +12,11 @@ There are 2 types of partner links.
 - A customer link can be sent to customer, so we can allocate the commission to a
 partner at the booking time. It looks as following: 
    
-  https://<i></i>my-cruise-excursion.co.uk?customer=YourPartnerID
+  https://<i></i>mycruiseexcursion.co.uk?customer=YourPartnerID
    
 - A partner link can be used by travel agent to make a booking. As partner visitor you have some features on the website, those are disabled for customers. It looks as following:
   
-  https://<i></i>my-cruise-excursion.co.uk?partner=YourPartnerID
+  https://<i></i>mycruiseexcursion.co.uk?partner=YourPartnerID
 
 #### Link parameters
 
@@ -42,8 +42,8 @@ We have serveral shops for different markets. Please choose correct shop for you
 
 | shop | currency | language 
 | --- | --- | ---
-| my-cruise-excursion.com | USD | ENG
-| my-cruise-excursion.co.uk | GBP | ENG
+| mycruiseexcursion.com | USD | ENG
+| mycruiseexcursion.co.uk | GBP | ENG
 | meine-landausfluege.de | EUR | GER
 | meine-landausfluege.ch | CHF | GER
 
