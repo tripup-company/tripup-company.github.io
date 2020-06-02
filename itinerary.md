@@ -4,6 +4,8 @@ This widget is a frontend client that uses TripUp Cruise and Booking APIs.
 
 [**See here our Demo Widget** ](https://widget.meine-landausfluege.de/itinerary/iframe.html)
 
+[**Try Our Code Generator**](https://widget.meine-landausfluege.de/itinerary/generator/index.html)
+
 ## Getting Started
 
 There are two option how you can use this widget: using it as an iframe or bind it directly as a script into your page. 
