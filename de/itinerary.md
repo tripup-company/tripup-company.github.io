@@ -2,7 +2,11 @@
 
 Dieses Widget ist ein Frontend-Client, der TripUp Cruise- und Booking-APIs verwendet 
 und den Reiseplan mit allen Produkten darstellen kann.
+
 [**Ein Demo können Sie sich hier ansehen** ](https://widget.meine-landausfluege.de/itinerary/iframe.html)
+
+[**Probieren Sie unseren Code Generator aus**](https://widget.meine-landausfluege.de/itinerary/generator/index.html)
+
 
 ## Beginnen
 
