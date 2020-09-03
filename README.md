@@ -47,9 +47,6 @@ We have serveral shops for different markets. Please choose correct shop for you
 | meine-landausfluege.de | EUR | GER
 | meine-landausfluege.ch | CHF | GER
 
-## Simple Widget
-The simple widget allow you to show a subset of products on an itinerary or in a port.
-Please follow this [link](https://tripup-company.github.io/widget.html) to learn more.
 
 ## Itinerary Widget
 This is the new version of widget with itinerary navigation and full product listing.
