@@ -27,7 +27,5 @@ The are different shops listed in the following table.
 
 | widget src | shop | currency | language 
 | --- | --- | --- | ---
-| api.my-cruise-excursion.com | my-cruise-excursion.com | USD | ENG
-| api.my-cruise-excursion.co.uk | my-cruise-excursion.co.uk | GBP | ENG
 | api.meine-landausfluege.de | meine-landausfluege.de | EUR | GER
 | api.meine-landausfluege.ch | meine-landausfluege.ch | CHF | GER
