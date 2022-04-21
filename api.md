@@ -1,7 +1,5 @@
 # TripUp REST API
 
-*WORK IN PROGRESS*
-
 All our API's are described with [Swagger](https://swagger.io/) (OpenAPI). By using [Swagger CodeGen](https://swagger.io/tools/swagger-codegen/)  you can generate libraries for different programming langauges.
 Our Swagger UI allow you to test API directly in Browser. 
 You need API credentials to use our API. Please contact our IT for credentials.
