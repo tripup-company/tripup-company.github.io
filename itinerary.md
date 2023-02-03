@@ -2,7 +2,7 @@
 
 This widget is a frontend client that uses TripUp Cruise and Booking APIs.
 
-[**See here our Demo Widget** ](https://widget.meine-landausfluege.de/itinerary/iframe.html)
+[**See here our Demo Widget** ](https://meine-landausfluege.de/online-einbindungsmoeglichkeiten/)
 
 [**Try Our Code Generator**](https://widget.meine-landausfluege.de/widget-generator/index.html)
 
